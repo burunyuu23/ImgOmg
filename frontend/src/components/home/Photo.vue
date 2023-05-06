@@ -3,9 +3,7 @@
 </script>
 
 <template>
-    <v-container>
-        hi~!
-    </v-container>
+
 </template>
 
 <style scoped>
