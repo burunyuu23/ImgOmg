@@ -1,7 +1,7 @@
 <template>
-    <v-app>
+    <v-app app>
         <nav-bar/>
-        <v-main>
+        <v-main class="main">
             <router-view/>
         </v-main>
     </v-app>
@@ -16,3 +16,9 @@ export default {
     components: {NavBar},
 }
 </script>
+
+<style scoped>
+.main{
+    background: var(--main-bgc);
+}
+</style>
