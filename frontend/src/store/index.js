@@ -5,8 +5,19 @@ import Cookies from 'js-cookie';
 export default createStore({
     state: {
         isAuth: false,
+        dialog: false
     },
-    getters: {},
-    mutations: {},
+    getters: {
+    },
+    actions: {
+    },
+    mutations: {
+        start(state) {
+            state.dialog = true;
+        },
+        exitDialog(state) {
+            state.dialog = false;
+        }
+    },
     modules: {}
 })

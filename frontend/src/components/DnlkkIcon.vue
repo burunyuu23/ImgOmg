@@ -9,6 +9,9 @@ export default defineComponent({
 <template>
     <div class="imgomg ml-5">
         <div>
+            <video autoplay muted loop class="video-container">
+                <source src="../resources/test.mp4" type="video/mp4"/>
+            </video>
             <a
                     class="imgomg__text font-weight-medium"
                     href="/">
@@ -33,22 +36,40 @@ export default defineComponent({
     width: 255px;
 
     background-color: var(--main-bgc);
-
     border-radius: 100px 100px 0 0;
+    color: white;
+
+    box-shadow: 0 0 0 black;
+    transition: 1s linear;
 }
+.imgomg:hover {
+    box-shadow: 0 0 20px black;
+}
+.imgomg:active {
+    color: var(--header-bgc);
+}
+
 
 .imgomg__text {
     text-decoration: none;
-    color: var(--logo-c);
+    color: white;
 
     display: flex;
-
-    font-size: 32px;
 
     margin-left: 50px;
     justify-self: end;
     justify-content: end;
     justify-items: end;
+
+    font-size: 32px;
+    transition: 1s linear;
+}
+.imgomg__text:hover {
+    color: black;
+    transition: 1s linear;
+}
+.imgomg__text:active {
+    color: var(--header-bgc);
 }
 
 .wrapper {
@@ -58,14 +79,34 @@ export default defineComponent({
     grid-template-rows: 1fr 1fr 1fr;
 }
 
+.video-container {
+    border-radius: 50px 50px 0 0;
+    position: absolute;
+    background-size: auto;
+    object-fit: cover;
+    pointer-events: none;
+    width: 255px;
+    opacity: 50%;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-rows: max-content;
+
+    align-items: center;
+    transition: 1s linear;
+}
 
 @media screen and (max-width: 380px) {
+    .imgomg {
+        width: 196px;
+    }
 
-.imgomg {
-    width: 196px;
-}
     .imgomg__text {
         font-size: 16px;
+    }
+
+    .video-container {
+        width: 196px;
+        top:0;
     }
 }
 </style>
