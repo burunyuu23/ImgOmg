@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+  keycloak-postgres:
+    image: library/postgres:${KC_POSTGRES_IMAGE_TAG:-14}
+    container_name: ${POSTGRES_CONTAINER_NAME:-postgres}
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    healthcheck:
+      test: pg_isready -d postgres
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    ports:
+      - ${KC_POSTGRES_PORT_MAPPING:-5435}:5432
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:20.0.2
+    container_name: keycloak
+    volumes:
+      - type: bind
+        source: ./realm-export.json
+        target: /realm-export.json
+        read_only: true
+    command:
+      - start --auto-build --db postgres --hostname-strict-https false --hostname-strict false --proxy edge --http-enabled true --import-realm --spi-user-profile-legacy-user-profile-read-only-attributes *_RES_ACCESS_MODE
+    environment:
+      KC_DB_URL: jdbc:postgresql://keycloak-postgres:5432/postgres
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: postgres
+      KC_DB_SCHEMA: public
+      KC_FEATURES: preview
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8282:8080"
+    depends_on:
+      keycloak-postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://0.0.0.0:8080/realms/master"]
+      start_period: 10s
+      interval: 30s
+      retries: 3
+      timeout: 5s
