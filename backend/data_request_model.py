@@ -32,8 +32,8 @@ class User(BaseModel):
 
 
 class UserLogin(BaseModel):
-    login: str = Field(default=None)
-    email: EmailStr = Field(default=None)
+    login: str = Field(default="")
+    email: EmailStr = Field(default="")
     password: str = Field(default=None)
 
     class Config:

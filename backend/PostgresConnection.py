@@ -24,6 +24,15 @@ def add(SQL: str):
     return data
 
 
+def select_user(userID: str):
+    return add(
+        "SELECT login, name, surname, patronymic, email, birthdate, category "
+        "FROM users "
+        "WHERE login = '{}' "
+        "OR email = '{}'"
+        .format(userID, userID))
+
+
 def insert_user(user: User):
     if not check(User_to_UserLogin(user)):
         add("INSERT INTO users (login, password, name, surname, patronymic, email, birthdate, category)"

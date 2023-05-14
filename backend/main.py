@@ -43,11 +43,18 @@ def check_user(data: UserLogin):
 @app.post('/user/login', tags=["user"])
 def user_login(user: UserLogin = Body(default=None)):
     if check_user(user):
-        return signJWT(user.email)
+        return signJWT(user.login + "/" + user.email)
     else:
         return {
             "error": "Invalid login details!"
         }
+
+
+@app.get('/user/profile', dependencies=[Depends(jwtBearer())], tags=["user"])
+def user_profile(token=Depends(jwtBearer())):
+    decode_data = decodeJWT(token)
+    pdata = postgres_conn.select_user(decode_data['userID'])
+    return pdata
 
 
 @app.get('/user/test')
