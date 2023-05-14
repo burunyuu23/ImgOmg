@@ -40,6 +40,9 @@ def insert_user(user: User):
             .format(user.login, user.password, user.name
                     , user.surname, user.patronymic, user.email
                     , user.birthdate, user.category))
+        return 'done'
+    else:
+        return 'Пользователь с таким логином или почтой уже зарегистрирован!'
 
 
 def check(data: UserLogin):

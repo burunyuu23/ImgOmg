@@ -2,7 +2,7 @@ import uvicorn
 
 import PostgresConnection as postgres_conn
 
-from fastapi import FastAPI, Body, Depends
+from fastapi import FastAPI, Body, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.auth.jwt_handler import signJWT, decodeJWT
@@ -29,7 +29,9 @@ async def pong():
 
 @app.post('/user/signup', tags=["user"])
 def user_signup(user: User = Body(default=None)):
-    postgres_conn.insert_user(user)
+    response = postgres_conn.insert_user(user)
+    if response != 'done':
+        raise HTTPException(status_code=403, detail=response)
     return signJWT(user.email)
 
 
