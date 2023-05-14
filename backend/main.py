@@ -2,10 +2,10 @@ import uvicorn
 
 import PostgresConnection as postgres_conn
 
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, Body, Depends
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.auth.jwt_handler import signJWT
+from backend.auth.jwt_handler import signJWT, decodeJWT
 from data_request_model import Category, UserLogin, User
 from backend.auth.jwt_bearer import jwtBearer
 
@@ -18,7 +18,7 @@ app.add_middleware(
 )
 
 
-@app.get("/")
+@app.get("/", dependencies=[Depends(jwtBearer())])
 async def pong():
     return {
         'id': 0,
