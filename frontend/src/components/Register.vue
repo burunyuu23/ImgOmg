@@ -1,9 +1,5 @@
 <script>
 import {defineComponent} from 'vue'
-import bcrypt from "bcryptjs";
-
-const saltRounds = 10;
-const salt = bcrypt.genSaltSync(saltRounds);
 export default defineComponent({
     name: "Register",
     data() {
@@ -46,7 +42,7 @@ export default defineComponent({
                 "category": this.categoryIndex
             }
 
-            return this.rules.email(this.email) &
+            return this.rules.email(this.email) !== 'Invalid e-mail.' &&
                 !(this.not_secure_password ||
                     this.passwords_incorrect ||
                     this.hasEmptyFields(reg_data))
@@ -60,7 +56,7 @@ export default defineComponent({
         reg() {
             let reg_data = {
                 "login": this.login,
-                "password": bcrypt.hashSync(this.password, salt),
+                "password": this.password,
                 "name": this.name,
                 "surname": this.surname,
                 "patronymic": this.patronymic,
@@ -77,15 +73,10 @@ export default defineComponent({
         ,
         onPasswordChange(value) {
             if (value.target.value.length > 6)
-                this.password = bcrypt.hashSync(value.target.value, salt)
+                this.password = value.target.value
             else
                 this.password = 'not a secure password'
             console.log(this.password);
-        }
-        ,
-        onRepPasswordChange(value) {
-            this.repeat_password =
-                bcrypt.hashSync(value.target.value, salt)
         }
     },
     watch: {
@@ -200,7 +191,7 @@ export default defineComponent({
                                 :type="visible ? 'text' : 'password'"
                                 density="compact"
                                 placeholder="Повторите пароль*"
-                                @change="onRepPasswordChange"
+                                v-model="repeat_password"
                                 prepend-inner-icon="mdi-lock-outline"
                                 variant="outlined"
                                 @click:append-inner="visible = !visible"

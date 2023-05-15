@@ -37,6 +37,7 @@ export default createStore({
                         expires: 7,
                         path: ''
                     });
+                    console.log(response)
                     state.response = "Спасибо за регистрацию!";
                     state.dialog = false;
                     state.isAuth = true;
@@ -51,8 +52,30 @@ export default createStore({
                     }
                 })
         },
-        async login(state) {
+        async login(state, data) {
+            console.log(data);
+            await axios.post(`${BASE_URL}/user/login`,
+                data)
+                .then(response => {
+                    Cookies.set('jwt', `${response.data['access token']}`, {
+                        expires: 7,
+                        path: ''
+                    });
+                })
+                .catch(error => {
+                    if (error.response.status === 403) {
+                        state.response = error.response.data.detail;
+                    } else {
+                        state.response = "Возникла" +
+                            " непредвиденная ошибка!" +
+                            " Какой кошмар...";
+                    }
+                })
+                .finally(() => {
+                    this.commit('auth');
+                })
 
+            console.log(state.profile)
         },
         async logout(state) {
             axios.get(`${BASE_URL}/user/logout`)
@@ -85,9 +108,9 @@ export default createStore({
                         birthdate: profileMixin.methods.formatDate(data.birthdate),
                         category: data.category,
                     }
+                    state.isAuth = true
 
                     state.response = ''
-                    state.isAuth = false
                     state.dialog = false
                 })
                 .catch(error => {

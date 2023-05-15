@@ -1,6 +1,5 @@
 <script>
 import {defineComponent} from 'vue'
-import bcrypt from "bcryptjs";
 
 export default defineComponent({
     name: "Auth",
@@ -8,9 +7,7 @@ export default defineComponent({
         return {
             visible: false,
             login: '',
-            email: '',
             password: '',
-            repeat_password: '',
             rules: {
                 required: value => !!value || 'Required.',
                 email: value => {
@@ -21,15 +18,29 @@ export default defineComponent({
         }
     },
     methods: {
-        onPasswordChange(value) {
-            if (value.target.value.length > 6)
-                this.password = bcrypt.hashSync(value.target.value, salt)
-            else
-                this.password = 'not a secure password'
-            console.log(this.password);
+        hasEmptyFields(obj) {
+            return Object.values(obj).some(val => !val)
         },
         auth() {
+            let auth_data;
+            console.log(this.rules.email(this.login))
+            if (this.rules.email(this.login) !==
+                'Invalid e-mail.'){
+                auth_data = {
+                    "email": this.login,
+                    "password": this.password
+                }
+            } else {
+                auth_data = {
+                    "login": this.login,
+                    "password": this.password
+                }
+            }
 
+            if (!this.hasEmptyFields(auth_data)) {
+                this.$store.commit('login',
+                    auth_data)
+            }
         }
     }
 })
@@ -58,7 +69,7 @@ export default defineComponent({
                                 placeholder="Введите пароль"
                                 prepend-inner-icon="mdi-lock-outline"
                                 variant="outlined"
-                                @change="onPasswordChange"
+                                v-model="password"
                                 @click:append-inner="visible = !visible"
                         ></v-text-field>
                     </v-col>
