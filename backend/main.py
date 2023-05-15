@@ -59,6 +59,18 @@ def user_profile(token=Depends(jwtBearer())):
     return pdata
 
 
+@app.get('/user/logout', tags=["user"])
+def user_profile():
+    data = {
+        'login': '',
+        'fullname': '',
+        'email': '',
+        'birthdate': '',
+        'category': '',
+    }
+    return data
+
+
 @app.get('/user/test')
 def test():
     data = postgres_conn \

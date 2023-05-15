@@ -2,15 +2,22 @@ import {createStore} from 'vuex'
 import axios from "axios";
 import Cookies from 'js-cookie';
 import {BASE_URL} from "../baseUrl.js";
-
+import {profileMixin} from "../mixins/profileMixin.js";
 export default createStore({
+    mixins: [profileMixin],
     state: {
         isAuth: false,
         dialog: false,
         response: '',
+        profile: {
+            login: '',
+            fullname: '',
+            email: '',
+            birthdate: '',
+            category: '',
+        }
     },
-    getters: {
-    },
+    getters: {},
     actions: {
     },
     mutations: {
@@ -28,7 +35,8 @@ export default createStore({
                 .then(response => {
                     Cookies.set('jwt', `${response.data['access token']}`, {
                         expires: 7,
-                        path: ''});
+                        path: ''
+                    });
                     state.response = "Спасибо за регистрацию!";
                     state.dialog = false;
                     state.isAuth = true;
@@ -40,10 +48,51 @@ export default createStore({
                         state.response = "Возникла" +
                             " непредвиденная ошибка!" +
                             " Какой кошмар...";
-                    }})
+                    }
+                })
         },
         async login(state) {
-            
+
+        },
+        async logout(state) {
+            axios.get(`${BASE_URL}/user/logout`)
+                .then(response => {
+                    state.profile = response.data
+                    Cookies.remove('jwt');
+                })
+                .catch(error => {
+                    return Promise.reject(error)
+                })
+
+            state.isAuth = false
+        },
+        async auth(state) {
+            await axios.get(`${BASE_URL}/user/profile`,
+                {
+                    headers: {
+                        'Authorization':
+                            'Bearer ' +
+                            Cookies.get('jwt')
+                    }
+                })
+                .then(response => {
+                    let data = response.data
+
+                    state.profile = {
+                        login: data.login,
+                        fullname: profileMixin.methods.fullName(data.name, data.surname, data.patronymic),
+                        email: data.email,
+                        birthdate: profileMixin.methods.formatDate(data.birthdate),
+                        category: data.category,
+                    }
+
+                    state.response = ''
+                    state.isAuth = false
+                    state.dialog = false
+                })
+                .catch(error => {
+                    console.error(error)
+                })
         }
 
     },

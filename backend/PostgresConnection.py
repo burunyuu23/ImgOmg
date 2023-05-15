@@ -25,12 +25,21 @@ def add(SQL: str):
 
 
 def select_user(userID: str):
-    return add(
-        "SELECT login, name, surname, patronymic, email, birthdate, category "
-        "FROM users "
+    pdata = add(
+        "SELECT login, name, surname, patronymic, email, birthdate, categories.category "
+        "FROM users JOIN categories ON users.category + 1 = categories.category_id "
         "WHERE login = '{}' "
         "OR email = '{}'"
-        .format(userID, userID))
+        .format(userID, userID))[0]
+    return {
+        'login': pdata[0],
+        'name': pdata[1],
+        'surname': pdata[2],
+        'patronymic': pdata[3],
+        'email': pdata[4],
+        'birthdate': pdata[5],
+        'category': pdata[6],
+    }
 
 
 def insert_user(user: User):

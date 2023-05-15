@@ -1,11 +1,22 @@
 <script>
 import {defineComponent} from 'vue'
 import Register from "./Register.vue";
+import Auth from "./Auth.vue";
 
 export default defineComponent({
     name: "DnlkkDialog",
-    components: {Register},
-    props: ['dialog']
+    components: {Auth, Register},
+    data() {
+        return {
+            isSignUp: true
+        }
+    },
+    props: ['dialog'],
+    methods: {
+        sign_in() {
+            this.isSignUp = !this.isSignUp
+        },
+    },
 })
 </script>
 
@@ -26,12 +37,14 @@ export default defineComponent({
                         Open Dialog
                     </v-btn>
                 </template>
-                <div>
+                <div class="video-container">
                     <video autoplay muted loop class="video-container">
                         <source src="../resources/test.mp4" type="video/mp4"/>
                     </video>
                 </div>
-                <register/>
+                <register v-if="isSignUp" @sign_in="sign_in"/>
+                <auth v-else @sign_in="sign_in"/>
+                <div style="clear:both;"> </div>
             </v-dialog>
         </v-row>
     </template>
@@ -42,13 +55,19 @@ export default defineComponent({
     color: white;
     text-shadow: 0 0 20px var(--header-bgc);
 }
+.dialog {
+}
 .video-container {
     position: absolute;
     margin: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    box-sizing: border-box;
     overflow: hidden;
     filter: blur(15px);
     box-shadow: 0 0 100px var(--logo-c);
+}
+video {
+    object-fit: fill
 }
 </style>

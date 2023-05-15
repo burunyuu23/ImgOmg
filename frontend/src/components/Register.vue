@@ -252,6 +252,12 @@ export default defineComponent({
             >
                 Зарегистрироваться
             </v-btn>
+            <v-btn
+                variant="text"
+                @click="this.$emit('sign_in')"
+            >
+                Войти
+            </v-btn>
             <v-spacer/>
         </v-card-actions>
     </v-card>

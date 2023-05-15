@@ -1,30 +1,43 @@
-<script setup>
-
+<script>
 import DnlkkIcon from "./DnlkkIcon.vue";
+
+export default {
+    name: "NavBar",
+    components: {DnlkkIcon},
+    mounted() {
+        this.$store.commit('auth');
+    }
+}
 </script>
 
 <template>
     <div class="main">
-        <v-card rounded="0" >
+        <v-card rounded="0">
             <v-toolbar
-                class="toolbar"
+                    class="toolbar"
                     density="compact"
                     dense>
                 <dnlkk-icon/>
                 <v-spacer/>
-                <v-btn icon v-if="!this.$store.state.isAuth">
+                <v-btn icon
+                       v-if="!this.$store.state.isAuth">
                     <v-icon
-                    @click="$router.push('/lk')">
+                            @click="$router.push('/lk')">
                         mdi-account-arrow-left
                     </v-icon>
                 </v-btn>
                 <div v-else>
                     <v-btn icon>
                         <v-icon
-                            @click="$router.push('/lk')">mdi-account-box</v-icon>
+                                @click="$router.push('/lk')">
+                            mdi-account-box
+                        </v-icon>
                     </v-btn>
                     <v-btn icon>
-                        <v-icon>mdi-export</v-icon>
+                        <v-icon
+                                @click="this.$store.commit('logout')">
+                            mdi-export
+                        </v-icon>
                     </v-btn>
                 </div>
             </v-toolbar>
@@ -34,10 +47,10 @@ import DnlkkIcon from "./DnlkkIcon.vue";
 
 <style scoped>
 .toolbar {
-    background: linear-gradient(to right,var(--logo-c), var(--header-bgc));
+	background: linear-gradient(to right, var(--logo-c), var(--header-bgc));
 }
 
 .main dnlkk-icon {
-    justify-content: start;
+	justify-content: start;
 }
 </style>
