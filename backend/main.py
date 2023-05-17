@@ -72,38 +72,5 @@ def user_profile():
     return data
 
 
-@app.get('/user/test')
-def test():
-    data = postgres_conn \
-        .add('''SELECT email, password FROM users WHERE email = 'ezzfvkoko@gmail.com';''')
-    return {
-        "ansa": data
-    }
-
-
-@app.get('/user/test2')
-def test():
-    data = postgres_conn \
-        .add('''SELECT * FROM users;''')
-    return {
-        "ansa": data
-    }
-
-
-@app.get('/user/test3')
-def test():
-    data = postgres_conn \
-        .add('''SELECT email, password FROM users WHERE email = 'ezzfvskoko@gmail.com';''')
-    return {
-        "ansa": data
-    }
-
-
-# @app.post("/add-test")
-# async def add_test(parameters: Test):
-#     print(parameters)
-#     postgres_conn.add("INSERT INTO test VALUES ({}, '{}')".format(parameters.id, parameters.name))
-#     return 'done'
-
 if __name__ == '__main__':
     uvicorn.run('main:app', host="127.0.0.1", port=8080)

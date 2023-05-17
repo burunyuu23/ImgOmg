@@ -1,11 +1,6 @@
 from pydantic import BaseModel, Field, EmailStr
 
 
-class Test(BaseModel):
-    id: int
-    name: str
-
-
 class User(BaseModel):
     login: str = Field(default=None)
     password: str = Field(default=None)
