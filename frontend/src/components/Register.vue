@@ -76,7 +76,6 @@ export default defineComponent({
                 this.password = value.target.value
             else
                 this.password = 'not a secure password'
-            console.log(this.password);
         }
     },
     watch: {

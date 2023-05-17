@@ -23,7 +23,6 @@ export default defineComponent({
         },
         auth() {
             let auth_data;
-            console.log(this.rules.email(this.login))
             if (this.rules.email(this.login) !==
                 'Invalid e-mail.'){
                 auth_data = {
