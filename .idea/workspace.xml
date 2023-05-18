@@ -4,25 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="remove console.log() + add dockerfile with https">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavBar.vue" afterDir="false" />
+    <list default="true" id="2820fbe5-9609-41ff-8c25-2513ebb31487" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/auth/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/PostgresConnection.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/auth/PostgresConnection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/auth/jwt_bearer.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/auth/jwt/jwt_bearer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/auth/jwt_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/auth/jwt/jwt_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/auth/pass_hash.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/auth/jwt/pass_hash.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/data_request_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/auth/data_request_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/auth/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Vue Composition API Component" />
-        <option value="JavaScript File" />
-        <option value="Vue Options API Component" />
-        <option value="Python Script" />
-        <option value="Dockerfile" />
-      </list>
-    </option>
   </component>
   <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
     <envs>
@@ -36,13 +43,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -60,337 +61,37 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2PEkZFRmVD2z4LQugQCvTzZLOUH" />
+  <component name="ProjectId" id="2PxdYMOypt48a7vnmb5CGkHsy51" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/task6_v2/frontend/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/task6_v2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
-    ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;c646848e-1af0-42c2-ad57-c1a4b74c4f6b/database/\&quot;danilkk_db\&quot;/schema/\&quot;public\&quot;&quot;,
-      &quot;c646848e-1af0-42c2-ad57-c1a4b74c4f6b/database/\&quot;danilkk_db\&quot;&quot;
-    ],
-    &quot;vue.recent.templates&quot;: [
-      &quot;Vue Composition API Component&quot;,
-      &quot;Vue Options API Component&quot;
-    ]
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\user\PycharmProjects\task6_v2\frontend\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\user\PycharmProjects\task6_v2\frontend\src\resources" />
-      <recent name="C:\Users\user\PycharmProjects\task6_v2\frontend" />
-      <recent name="C:\Users\user\PycharmProjects\task6_v2\backend" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python.main (1)">
-    <configuration name="init_users.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/db/init_users.sql" />
-      <script-mode>FILE</script-mode>
-      <data-source id="c646848e-1af0-42c2-ad57-c1a4b74c4f6b" namespace="database/&quot;danilkk_db&quot;/schema/&quot;public&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="PostgresConnection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="task6_v2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/PostgresConnection.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="jwt_bearer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="task6_v2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/auth" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/auth/jwt_bearer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="task6_v2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="task6_v2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="task6_v2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\user\PycharmProjects\task6_v2\backend\main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="frontend/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="frontend/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.main (1)" />
-        <item itemvalue="Docker.frontend/Dockerfile" />
-        <item itemvalue="Python.jwt_bearer" />
-        <item itemvalue="Python.PostgresConnection" />
-        <item itemvalue="Database Script.init_users.sql" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="" />
-      <created>1683029682145</created>
+      <changelist id="2820fbe5-9609-41ff-8c25-2513ebb31487" name="Changes" comment="" />
+      <created>1684402712569</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1683029682145</updated>
-      <workItem from="1683029688675" duration="1078000" />
-      <workItem from="1683216787777" duration="14224000" />
-      <workItem from="1683383193053" duration="28009000" />
-      <workItem from="1683476645375" duration="9522000" />
-      <workItem from="1683566804494" duration="657000" />
-      <workItem from="1683612869535" duration="1441000" />
-      <workItem from="1684060997475" duration="16947000" />
-      <workItem from="1684325780975" duration="6979000" />
+      <updated>1684402712569</updated>
+      <workItem from="1684402713587" duration="54000" />
+      <workItem from="1684402929194" duration="34000" />
+      <workItem from="1684403261121" duration="242000" />
+      <workItem from="1684403519073" duration="77000" />
     </task>
-    <task id="LOCAL-00001" summary="`Hi there!`'s commit">
-      <created>1683224067825</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1683224067825</updated>
-    </task>
-    <task id="LOCAL-00002" summary="vue-router is done">
-      <created>1683228644054</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1683228644054</updated>
-    </task>
-    <task id="LOCAL-00003" summary="nav-bar is done">
-      <created>1683392780634</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1683392780634</updated>
-    </task>
-    <task id="LOCAL-00004" summary="add vuex and js-cookie + nav-bar fix">
-      <created>1683392810392</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1683392810392</updated>
-    </task>
-    <task id="LOCAL-00005" summary="registration form + more nuclear DeS1gN">
-      <created>1683468009271</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1683468009271</updated>
-    </task>
-    <task id="LOCAL-00006" summary="requirements.txt">
-      <created>1684062780889</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1684062780890</updated>
-    </task>
-    <task id="LOCAL-00007" summary="fixed imports">
-      <created>1684063099556</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1684063099556</updated>
-    </task>
-    <task id="LOCAL-00008" summary="auth is end + get profile data">
-      <created>1684066088595</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1684066088595</updated>
-    </task>
-    <task id="LOCAL-00009" summary="front: reg is done">
-      <created>1684081527690</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1684081527690</updated>
-    </task>
-    <task id="LOCAL-00010" summary="back: return status of reg">
-      <created>1684081552150</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1684081552150</updated>
-    </task>
-    <task id="LOCAL-00011" summary="back: hashing">
-      <created>1684169160674</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1684169160674</updated>
-    </task>
-    <task id="LOCAL-00012" summary="remove console.log() + add dockerfile with https">
-      <created>1684334551058</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1684334551058</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="`Hi there!`'s commit" />
-    <MESSAGE value="vue-router is done" />
-    <MESSAGE value="nav-bar is done" />
-    <MESSAGE value="add vuex and js-cookie + nav-bar fix" />
-    <MESSAGE value="registration form + more nuclear DeS1gN" />
-    <MESSAGE value="requirements.txt" />
-    <MESSAGE value="fixed imports" />
-    <MESSAGE value="auth is end + get profile data" />
-    <MESSAGE value="front: reg is done" />
-    <MESSAGE value="back: return status of reg" />
-    <MESSAGE value="back: hashing" />
-    <MESSAGE value="remove console.log() + add dockerfile with https" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove console.log() + add dockerfile with https" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/task6_v2$test.coverage" NAME="test Coverage Results" MODIFIED="1683822836341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/task6_v2$PostgresConnection.coverage" NAME="PostgresConnection Coverage Results" MODIFIED="1684002454181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/task6_v2$jwt_bearer.coverage" NAME="jwt_bearer Coverage Results" MODIFIED="1684063069932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/auth" />
-    <SUITE FILE_PATH="coverage/task6_v2$main.coverage" NAME="main Coverage Results" MODIFIED="1683371928937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/task6_v2$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1684399133067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/task6_v2$App__1_.coverage" NAME="App (1) Coverage Results" MODIFIED="1684336226457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/auth" />
-    <SUITE FILE_PATH="coverage/task6_v2$db_initialzr.coverage" NAME="db_initialzr Coverage Results" MODIFIED="1683477408595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
-    <SUITE FILE_PATH="coverage/task6_v2$app.coverage" NAME="app Coverage Results" MODIFIED="1683469841206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
   </component>
 </project>

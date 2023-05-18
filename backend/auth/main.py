@@ -1,14 +1,16 @@
+import sys
 import uvicorn
 
 import PostgresConnection as postgres_conn
-import auth.pass_hash as ph
+from data_request_model import UserLogin, User
+
 
 from fastapi import FastAPI, Body, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.auth.jwt_handler import signJWT, decodeJWT
-from data_request_model import Category, UserLogin, User
-from backend.auth.jwt_bearer import jwtBearer
+from jwt_utils.jwt_handler import signJWT, decodeJWT
+from jwt_utils.jwt_bearer import jwtBearer
+import jwt_utils.pass_hash as ph
 
 app = FastAPI()
 app.add_middleware(
@@ -18,6 +20,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+PC = postgres_conn.PostgresConnection(sys.argv[1:])
 
 
 @app.get("/", dependencies=[Depends(jwtBearer())])
@@ -32,7 +36,7 @@ async def pong():
 @app.post('/user/signup', tags=["user"])
 def user_signup(user: User = Body(default=None)):
     user.password = ph.hash(user.password)
-    response = postgres_conn.insert_user(user)
+    response = PC.insert_user(user)
     if response != 'done':
         raise HTTPException(status_code=403, detail=response)
     return signJWT(user.email)
@@ -40,7 +44,7 @@ def user_signup(user: User = Body(default=None)):
 
 @app.post('/user/check', tags=["user"])
 def check_user(data: UserLogin):
-    pdata = postgres_conn.check(data)
+    pdata = PC.check(data)
     if len(pdata) > 0:
         return ph.verify(data.password, pdata[0][2])
 
@@ -56,7 +60,7 @@ def user_login(user: UserLogin = Body(default=None)):
 @app.get('/user/profile', dependencies=[Depends(jwtBearer())], tags=["user"])
 def user_profile(token=Depends(jwtBearer())):
     decode_data = decodeJWT(token)
-    pdata = postgres_conn.select_user(decode_data['userID'])
+    pdata = PC.select_user(decode_data['userID'])
     return pdata
 
 
