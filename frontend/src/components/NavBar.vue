@@ -1,11 +1,14 @@
 <script>
 import DnlkkIcon from "./DnlkkIcon.vue";
+import Cookies from "js-cookie";
 
 export default {
     name: "NavBar",
     components: {DnlkkIcon},
     mounted() {
-        this.$store.commit('auth');
+        if (Cookies.get().hasOwnProperty('jwt')) {
+            this.$store.commit('auth');
+        }
     }
 }
 </script>
