@@ -7,6 +7,7 @@ import axios from 'axios'
 import store from "./store/index.js";
 import mixins from "./mixins/index.js";
 
+
 loadFonts()
 
 const app = createApp(App)
