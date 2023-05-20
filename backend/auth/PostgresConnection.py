@@ -1,11 +1,12 @@
 import psycopg2 as psycopg2
 
-from backend.data_request_model import User, User_to_UserLogin, UserLogin
+from data_request_model import User, User_to_UserLogin, UserLogin
 
 db = [item.split('=')[1] for item
       in open('../db/database.env').read().split('\n')]
 
 
+class PostresConnection
 def add(SQL: str):
     conn = psycopg2.connect(
         host='127.0.0.1',

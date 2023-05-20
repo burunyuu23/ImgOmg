@@ -1,0 +1,19 @@
+mvc:
+  backend:
+    auth:
+      port: "8080"
+    editor:
+      port: "8081"
+    export_photo:
+      port: "8082"
+
+  frontend:
+    app:
+      port: "5173"
+
+  db:
+    port: "5432"
+    tables:
+      - users
+      - categories
+      - photos

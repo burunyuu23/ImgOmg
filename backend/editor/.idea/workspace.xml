@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f3ce074-51a7-4d86-8cfe-462804e5b45f" name="Changes" comment="" />
+    <list default="true" id="5f3ce074-51a7-4d86-8cfe-462804e5b45f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/jwt_bearer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/jwt_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/pass_hash.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +50,7 @@
       <recent name="C:\Users\user\PycharmProjects\task6_v2\backend\editor" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="editor" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,6 +113,7 @@
       <workItem from="1684403524889" duration="195000" />
       <workItem from="1684403739451" duration="2636000" />
       <workItem from="1684451486140" duration="183000" />
+      <workItem from="1684480242999" duration="605000" />
     </task>
     <servers />
   </component>
@@ -123,6 +130,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/editor$test.coverage" NAME="test Coverage Results" MODIFIED="1684407199904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

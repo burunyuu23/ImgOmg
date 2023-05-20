@@ -1,14 +1,14 @@
 import uvicorn
 
 import PostgresConnection as postgres_conn
-import auth.pass_hash as ph
+import jwt_utils.pass_hash as ph
 
 from fastapi import FastAPI, Body, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.auth.jwt_handler import signJWT, decodeJWT
+from jwt_utils.jwt_handler import signJWT, decodeJWT
 from data_request_model import Category, UserLogin, User
-from backend.auth.jwt_bearer import jwtBearer
+from jwt_utils.jwt_bearer import jwtBearer
 
 app = FastAPI()
 app.add_middleware(
