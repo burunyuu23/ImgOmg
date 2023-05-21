@@ -1,7 +1,7 @@
 import {createStore} from 'vuex'
 import axios from "axios";
 import Cookies from 'js-cookie';
-import {BASE_URL} from "../baseUrl.js";
+import {AUTH_URL} from "../baseUrl.js";
 import {profileMixin} from "../mixins/profileMixin.js";
 export default createStore({
     mixins: [profileMixin],
@@ -30,7 +30,7 @@ export default createStore({
         async registration(state, data) {
             // state.dialog = false;
             console.log(data);
-            await axios.post(`${BASE_URL}/user/signup`,
+            await axios.post(`${AUTH_URL}/user/signup`,
                 data)
                 .then(response => {
                     Cookies.set('jwt', `${response.data['access token']}`, {
@@ -54,7 +54,7 @@ export default createStore({
         },
         async login(state, data) {
             console.log(data);
-            await axios.post(`${BASE_URL}/user/login`,
+            await axios.post(`${AUTH_URL}/user/login`,
                 data)
                 .then(response => {
                     Cookies.set('jwt', `${response.data['access token']}`, {
@@ -78,7 +78,7 @@ export default createStore({
             console.log(state.profile)
         },
         async logout(state) {
-            axios.get(`${BASE_URL}/user/logout`)
+            axios.get(`${AUTH_URL}/user/logout`)
                 .then(response => {
                     state.profile = response.data
                     Cookies.remove('jwt');
@@ -90,7 +90,7 @@ export default createStore({
             state.isAuth = false
         },
         async auth(state) {
-            await axios.get(`${BASE_URL}/user/profile`,
+            await axios.get(`${AUTH_URL}/user/profile`,
                 {
                     headers: {
                         'Authorization':

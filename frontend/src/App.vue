@@ -2,6 +2,9 @@
     <v-app app class="app">
         <nav-bar/>
         <v-main class="main">
+
+          <dnlkk-dialog
+              v-model:dialog="this.$store.state.dialog"/>
             <video autoplay muted loop class="video-container">
                 <source src="../src/resources/test.mp4" type="video/mp4"/>
             </video>
@@ -13,10 +16,11 @@
 <script>
 
 import NavBar from "./components/NavBar.vue";
+import DnlkkDialog from "./components/DnlkkDialog.vue";
 
 export default {
     name: 'App',
-    components: {NavBar},
+    components: {DnlkkDialog, NavBar},
 }
 </script>
 

@@ -20,10 +20,16 @@
 </script>
 
 <template>
-hi there!
-  <v-btn @click="doing2">click me</v-btn>
+  <v-container class="cont">
+    <v-container>
+      hi there!
+      <v-btn @click="doing2">click me</v-btn>
+    </v-container>
+  </v-container>
 </template>
 
 <style scoped>
-
+.cont {
+  position: absolute;
+}
 </style>

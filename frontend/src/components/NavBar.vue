@@ -1,11 +1,13 @@
 <script>
 import DnlkkIcon from "./DnlkkIcon.vue";
+import Cookies from 'js-cookie';
 
 export default {
     name: "NavBar",
     components: {DnlkkIcon},
     mounted() {
-        this.$store.commit('auth');
+      if (Cookies.get('jwt') !== undefined)
+          this.$store.commit('auth');
     }
 }
 </script>
@@ -22,7 +24,7 @@ export default {
                 <v-btn icon
                        v-if="!this.$store.state.isAuth">
                     <v-icon
-                            @click="$router.push('/lk')">
+                            @click="this.$store.commit('start');">
                         mdi-account-arrow-left
                     </v-icon>
                 </v-btn>

@@ -1,18 +1,60 @@
 <script>
 import DnlkkDialog from "../components/DnlkkDialog.vue";
+import axios from "axios";
+import {EDIT_URL} from "../baseUrl.js";
 
 export default {
     components: {DnlkkDialog},
-}
+  data: ()  => ({
+    image: {}
+  }),
+  methods: {
+    handleImage(e) {
+      const image = e.target.files[0];
+      console.log(image);
+      this.base64_image(image)
+    },
+    base64_image(image) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        this.image = e.target.result;
+        this.uploadImage()
+      }
+
+      reader.readAsDataURL(image);
+    },
+    uploadImage() {
+      const {image} = this;
+      console.log(image);
+      axios.post(`${EDIT_URL}/upload`,
+          {image})
+          .then(resp => {
+            console.log('SUCCESS!!');
+            console.log(resp);
+          })
+          .catch(err => {
+            console.log('FAILURE!!');
+            console.log(err);
+          });
+    },
+    imgClick(){
+      if (this.$store.state.isAuth)
+        this.$refs.inputUpload.click();
+      else
+        this.$store.commit('start');
+    }
+  }}
 </script>
 
 <template>
     <div >
-
-    <dnlkk-dialog
-        v-model:dialog="this.$store.state.dialog"/>
-    <v-img
-            @click="this.$store.commit('start')"
+      <input v-show="false"
+             ref="inputUpload"
+             type="file"
+             @change="handleImage" />
+      <v-img
+            @click="imgClick"
             :aspect-ratio="1/1"
             class="img"
             cover

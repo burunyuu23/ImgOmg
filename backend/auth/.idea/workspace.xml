@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="change the structure">
-      <change afterPath="$PROJECT_DIR$/../editor/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT">
+      <change beforePath="$PROJECT_DIR$/../PostgresConnection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jwt_bearer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jwt_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pass_hash.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data_request_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../editor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/baseUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/baseUrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/NavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/CabinetPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/CabinetPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../requirements.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +83,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/task6_v2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/task6_v2/backend/auth&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -96,11 +111,11 @@
       <recent name="C:\Users\user\PycharmProjects\task6_v2\frontend\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\task6_v2\backend\auth\jwt_utils" />
       <recent name="C:\Users\user\PycharmProjects\task6_v2\backend\auth" />
       <recent name="C:\Users\user\PycharmProjects\task6_v2\backend" />
       <recent name="C:\Users\user\PycharmProjects\task6_v2\backend\auth\jwt" />
       <recent name="C:\Users\user\PycharmProjects\task6_v2\frontend\src\resources" />
-      <recent name="C:\Users\user\PycharmProjects\task6_v2\frontend" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -210,6 +225,13 @@
       <workItem from="1684403522915" duration="197000" />
       <workItem from="1684403732818" duration="1931000" />
       <workItem from="1684451495660" duration="178000" />
+      <workItem from="1684603100503" duration="1290000" />
+      <workItem from="1684608283188" duration="73000" />
+      <workItem from="1684608363235" duration="796000" />
+      <workItem from="1684609298879" duration="710000" />
+      <workItem from="1684663758549" duration="814000" />
+      <workItem from="1684664935826" duration="613000" />
+      <workItem from="1684673674005" duration="982000" />
     </task>
     <task id="LOCAL-00001" summary="`Hi there!`'s commit">
       <created>1683224067825</created>
@@ -353,20 +375,22 @@
     <MESSAGE value="remove console.log() + add dockerfile with https" />
     <MESSAGE value="fix bug with auto auth w/o cookies" />
     <MESSAGE value="change the structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="change the structure" />
+    <MESSAGE value="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT" />
+    <option name="LAST_COMMIT_MESSAGE" value="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/auth$main.coverage" NAME="main Coverage Results" MODIFIED="1684404218208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/task6_v2$test.coverage" NAME="test Coverage Results" MODIFIED="1683822836341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/auth$main.coverage" NAME="main Coverage Results" MODIFIED="1684674039378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/task6_v2$PostgresConnection.coverage" NAME="PostgresConnection Coverage Results" MODIFIED="1684002454181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/task6_v2$jwt_bearer.coverage" NAME="jwt_bearer Coverage Results" MODIFIED="1684063069932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/auth" />
+    <SUITE FILE_PATH="coverage/auth$app.coverage" NAME="app Coverage Results" MODIFIED="1684599505521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backend$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1684400364086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auth" />
+    <SUITE FILE_PATH="coverage/auth$main__1_.coverage" NAME="main Coverage Results" MODIFIED="1684403207846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/task6_v2$test.coverage" NAME="test Coverage Results" MODIFIED="1683822836341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/task6_v2$main.coverage" NAME="main Coverage Results" MODIFIED="1683371928937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/task6_v2$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1684399133067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/backend$main__1_.coverage" NAME="main Coverage Results" MODIFIED="1684401921744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auth" />
     <SUITE FILE_PATH="coverage/task6_v2$App__1_.coverage" NAME="App (1) Coverage Results" MODIFIED="1684336226457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/auth" />
-    <SUITE FILE_PATH="coverage/backend$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1684400364086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auth" />
     <SUITE FILE_PATH="coverage/task6_v2$db_initialzr.coverage" NAME="db_initialzr Coverage Results" MODIFIED="1683477408595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
     <SUITE FILE_PATH="coverage/task6_v2$app.coverage" NAME="app Coverage Results" MODIFIED="1683469841206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/auth$main__1_.coverage" NAME="main Coverage Results" MODIFIED="1684403207846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
