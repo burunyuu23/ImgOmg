@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT">
-      <change beforePath="$PROJECT_DIR$/../PostgresConnection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwt_bearer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jwt_handler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pass_hash.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data_request_model.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../editor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/baseUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/baseUrl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/NavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/mixins/profileMixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/mixins/profileMixin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/CabinetPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/CabinetPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/HomePage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +228,7 @@
       <workItem from="1684609298879" duration="710000" />
       <workItem from="1684663758549" duration="814000" />
       <workItem from="1684664935826" duration="613000" />
-      <workItem from="1684673674005" duration="982000" />
+      <workItem from="1684673674005" duration="3026000" />
     </task>
     <task id="LOCAL-00001" summary="`Hi there!`'s commit">
       <created>1683224067825</created>
@@ -379,7 +376,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/auth$main.coverage" NAME="main Coverage Results" MODIFIED="1684674039378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/auth$main.coverage" NAME="main Coverage Results" MODIFIED="1684678953358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/task6_v2$PostgresConnection.coverage" NAME="PostgresConnection Coverage Results" MODIFIED="1684002454181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/task6_v2$jwt_bearer.coverage" NAME="jwt_bearer Coverage Results" MODIFIED="1684063069932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/auth" />
     <SUITE FILE_PATH="coverage/auth$app.coverage" NAME="app Coverage Results" MODIFIED="1684599505521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

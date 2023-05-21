@@ -18,4 +18,5 @@
     --logo-c: #1f5a4a;
     --main-bgc: #239b6a;
     --settings-color: #27b27a;
+    --width2: min(90vw, 90vh - 20px);
 }

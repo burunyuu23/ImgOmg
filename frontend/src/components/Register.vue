@@ -1,7 +1,11 @@
 <script>
 import {defineComponent} from 'vue'
+import VueDatePicker from "@vuepic/vue-datepicker";
+import {profileMixin} from "../mixins/profileMixin.js";
 export default defineComponent({
     name: "Register",
+  mixins: [profileMixin],
+  components: {VueDatePicker},
     data() {
         return {
             items: ['Обыватель', 'Студент', 'Дизайнер'],
@@ -20,12 +24,15 @@ export default defineComponent({
             surname: '',
             patronymic: '',
             email: '',
-            birthdate: '',
+            birthdate: new Date(),
             category: 'Обыватель',
             categoryIndex: 1,
         }
     },
     computed: {
+      date() {
+        return this.formatDate(this.birthdate.toISOString().split('T')[0], false);
+      },
         passwords_incorrect() {
             return this.password !== this.repeat_password
         },
@@ -204,18 +211,19 @@ export default defineComponent({
 
                     <v-col
                             cols="12"
-                            sm="6"
                     >
-                        <v-text-field
-                                type="date"
-                                label="Дата рождения*"
-                                v-model="birthdate"
-                                required
-                        ></v-text-field>
+                      <vue-date-picker
+                          class="dp__theme_light"
+
+                          :max-date="new Date()"
+                          :enable-time-picker="false"
+                          auto-apply
+                          v-model="birthdate"
+                          :format="date" >
+                      </vue-date-picker>
                     </v-col>
                     <v-col
                             cols="12"
-                            sm="6"
                     >
                         <v-autocomplete
                                 :items="items"
@@ -269,5 +277,32 @@ export default defineComponent({
 	text-shadow: 0 0 1px black;
 }
 
+.dp__theme_light {
+  --dp-background-color: none;
+  --dp-text-color: white;
+  --dp-hover-color: #f3f3f3;
+  --dp-hover-text-color: #212121;
+  --dp-hover-icon-color: #959595;
+  --dp-primary-color: #1976d2;
+  --dp-primary-text-color: #f8f5f5;
+  --dp-secondary-color: #c0c4cc;
+  --dp-border-color: rgba(233, 233, 233, 0.55);
+  --dp-menu-border-color: #ddd;
+  --dp-border-color-hover: #aaaeb7;
+  --dp-disabled-color: #f6f6f6;
+  --dp-scroll-bar-background: #f3f3f3;
+  --dp-scroll-bar-color: #959595;
+  --dp-success-color: #76d275;
+  --dp-success-color-disabled: #a3d9b1;
+  --dp-icon-color: #959595;
+  --dp-danger-color: #ff6f60;
+  --dp-highlight-color: rgba(25, 118, 210, 0.1);
+}
+</style>
 
+<style>
+
+.dp__theme_light {
+  --dp-primary-color: var(--header-bgc);
+}
 </style>

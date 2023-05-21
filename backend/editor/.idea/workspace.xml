@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b2210e0-ec44-43c5-ad3b-d365489afa01" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../PostgresConnection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/jwt_bearer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/jwt_handler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/pass_hash.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data_request_model.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/mixins/profileMixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/mixins/profileMixin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/HomePage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1684663769977</updated>
       <workItem from="1684663771324" duration="1133000" />
-      <workItem from="1684664934746" duration="4942000" />
+      <workItem from="1684664934746" duration="7257000" />
     </task>
     <servers />
   </component>

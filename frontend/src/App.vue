@@ -1,6 +1,6 @@
 <template>
     <v-app app class="app">
-        <nav-bar/>
+        <nav-bar class="nav-bar"/>
         <v-main class="main">
 
           <dnlkk-dialog

@@ -1,13 +1,22 @@
 export const profileMixin = {
     methods: {
-        formatDate(date) {
+        formatDate(date, flag = true) {
             const monthNames = [
-                "Январь", "Февраль", "Март", "Апрель",
-                "Май", "Июнь", "Июль", "Август",
-                "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+                "Января", "Февраля", "Марта", "Апреля",
+                "Мая", "Июня", "Июля", "Августа",
+                "Сентября", "Октября", "Ноября", "Декабря"
             ]
             let arr = date.split('-');
-            return arr[2] + ' ' + monthNames[+arr[1] - 1]+ `'${arr[0].slice(2)}`
+
+            let year = flag ? '\'' + arr[0].slice(2) : ' ' +
+                arr[0];
+
+            let month = monthNames[+arr[1] - 1];
+
+            let day = arr[2].slice(0, 1) === '0' ? arr[2].slice(-1) :
+                arr[2]
+
+            return day + ' ' + month + year
         },
         fullName(name, surname, patronymic) {
             return surname + ' ' + name +

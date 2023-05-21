@@ -1,11 +1,12 @@
 import {createStore} from 'vuex'
 import axios from "axios";
 import Cookies from 'js-cookie';
-import {AUTH_URL} from "../baseUrl.js";
+import {AUTH_URL, EDIT_URL} from "../baseUrl.js";
 import {profileMixin} from "../mixins/profileMixin.js";
 export default createStore({
     mixins: [profileMixin],
     state: {
+        isLoaded: false,
         isAuth: false,
         dialog: false,
         response: '',
@@ -88,6 +89,7 @@ export default createStore({
                 })
 
             state.isAuth = false
+            state.isLoaded = false;
         },
         async auth(state) {
             await axios.get(`${AUTH_URL}/user/profile`,
@@ -116,6 +118,19 @@ export default createStore({
                 .catch(error => {
                     console.error(error)
                 })
+        },
+        async upload(state, image) {
+            state.isLoaded = true;
+            axios.post(`${EDIT_URL}/upload`,
+                {image})
+                .then(resp => {
+                    console.log('SUCCESS!!');
+                    console.log(resp);
+                })
+                .catch(err => {
+                    console.log('FAILURE!!');
+                    console.log(err);
+                });
         }
 
     },

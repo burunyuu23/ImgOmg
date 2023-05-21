@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="PY-231.9011.38">
-    <data-source name="danilkk_db@localhost" uuid="c646848e-1af0-42c2-ad57-c1a4b74c4f6b">
+    <data-source name="danilkk_db@localhost" uuid="b2744a84-3166-4466-971f-d9dc2f6c993d">
       <database-info product="PostgreSQL" version="15.3 (Debian 15.3-1.pgdg110+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="15.3" exact-driver-version="42.6">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
@@ -14,9 +14,6 @@
             <node kind="database" negative="1" />
             <node kind="database" qname="@">
               <node kind="schema" qname="@" />
-            </node>
-            <node kind="database" qname="postgres">
-              <node kind="schema" negative="1" />
             </node>
           </node>
         </introspection-scope>
