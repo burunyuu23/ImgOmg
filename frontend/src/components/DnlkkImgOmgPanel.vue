@@ -6,30 +6,81 @@ import {mapGetters} from "vuex";
 export default defineComponent({
   name: "DnlkkImgOmgPanel",
   components: {DnlkkSettingsPanel},
-  props: ['image'],
   data: () => ({
     method: 'Цвет',
     methods: ['Цвет', 'Размер', 'Сжатие', 'Приколы'],
     width_l: 0,
-    width_r: 1156,
-    height_t: (787-463)/2,
-    height_b: 463,
+    width_r: -1,
+    height_t: -1,
+    height_b: -1,
+    clientH: 1,
+    clientW: 1,
+    aspect: 1,
+    w: 0,
+    w2: 0,
+    h: 0,
+    h2: 0
   }),
   methods: {
     setMethod(data) {
       this.method = data;
     },
+    myEventHandler(e) {
+      this.clientH =
+          document.getElementsByClassName("image")[0].clientHeight
+      this.clientW =
+          document.getElementsByClassName("image")[0].clientWidth
+
+      this.resize();
+    },
     size(w, w2, h, h2) {
-      this.width_l = 1156/1920*w;
-      this.width_r = 1156/1920*(1920-w2) - this.width_l;
-      this.height_t = (787-463)/2 + 463/769*h
+      this.w = w
+      this.w2 = w2
+      this.h = h
+      this.h2 = h2
+
+      this.width_l =
+          this.clientW / this.getImage.width * w;
+
+      this.width_r =
+          this.clientW / this.getImage.width *
+          (this.getImage.width - w2) - this.width_l;
+
+      this.height_t =
+          (this.clientH - this.clientW/this.aspect) / 2 +
+          this.clientW/this.aspect /
+          this.getImage.height * h
+
       this.height_b =
-          (787-(787-463)/2)/769*(769-h2) - this.height_t;
+          (this.clientH -
+              (this.clientH - this.clientW/this.aspect) / 2)
+          / this.getImage.height *
+          (this.getImage.height - h2) - this.height_t;
+    },
+    resize() {
+      this.size(this.w, this.w2, this.h, this.h2);
     }
   },
   computed: {
-    ...mapGetters(['getImage'])
-  }
+    ...mapGetters(['getImage']),
+  },
+  mounted() {
+    window.addEventListener("resize", this.myEventHandler);
+
+
+    setTimeout(() => {
+          this.aspect =
+              this.getImage.width / this.getImage.height;
+
+          window.dispatchEvent(new
+          Event('resize'));
+
+        },
+        100)
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.myEventHandler);
+  },
 })
 </script>
 
@@ -179,7 +230,8 @@ a {
   height: 100%;
   z-index: 2;
 }
-.non-blend-square{
+
+.non-blend-square {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -188,6 +240,7 @@ a {
   background: white;
   filter: blur(10px);
 }
+
 .another-square {
   position: absolute;
   background: gray;
@@ -196,6 +249,7 @@ a {
   z-index: 1;
   mix-blend-mode: multiply;
 }
+
 .red-square::before {
   content: "";
   display: block;
