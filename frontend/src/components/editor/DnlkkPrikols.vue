@@ -10,17 +10,18 @@ export default defineComponent({
 </script>
 
 <template>
-
+  <v-container class="cont">
+    <div>Выберите прикол:</div>
+    <v-select />
+  </v-container>
 </template>
 
 
 <style scoped>
 
 * {
-  text-align: left;
+  text-align: center;
   font-size: 30px;
-}
-.cont {
 }
 </style>
 

@@ -1,10 +1,12 @@
 <script>
 import {defineComponent} from 'vue'
 import DnlkkSettingsPanel from "./DnlkkSettingsPanel.vue";
+import {mapGetters} from "vuex";
 
 export default defineComponent({
   name: "DnlkkImgOmgPanel",
   components: {DnlkkSettingsPanel},
+  props: ['image'],
   data: () => ({
     method: 'Цвет',
     methods: ['Цвет', 'Размер', 'Сжатие', 'Приколы'],
@@ -13,6 +15,9 @@ export default defineComponent({
     setMethod(data){
       this.method = data;
     }
+  },
+  computed: {
+    ...mapGetters(['getImage'])
   }
 })
 </script>
@@ -21,7 +26,7 @@ export default defineComponent({
   <div class="cont">
     <div class="main">
       <div class="photo">
-
+        <v-img :src="getImage" />
       </div>
       <div class="settings">
         <div class="settings-choose">
@@ -70,6 +75,8 @@ a {
 .photo {
   background: black;
   box-shadow: 0 0 20px black;
+  padding: 20px;
+  display: flex;
 }
 
 .settings {

@@ -10,15 +10,20 @@ export default createStore({
         isAuth: false,
         dialog: false,
         response: '',
+        image: new Image(),
         profile: {
             login: '',
             fullname: '',
             email: '',
             birthdate: '',
             category: '',
+        },
+    },
+    getters: {
+        getImage(state){
+            return state.image
         }
     },
-    getters: {},
     actions: {
     },
     mutations: {
@@ -121,18 +126,19 @@ export default createStore({
         },
         async upload(state, image) {
             state.isLoaded = true;
-            axios.post(`${EDIT_URL}/upload`,
+
+            await axios.post(`${EDIT_URL}/upload`,
                 {image})
                 .then(resp => {
                     console.log('SUCCESS!!');
-                    console.log(resp);
+                    state.image = new Image()
+                    state.image.src = resp.data.image
                 })
                 .catch(err => {
                     console.log('FAILURE!!');
                     console.log(err);
                 });
-        }
-
+        },
     },
     modules: {}
 })

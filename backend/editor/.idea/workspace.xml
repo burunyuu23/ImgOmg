@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b2210e0-ec44-43c5-ad3b-d365489afa01" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/mixins/profileMixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/mixins/profileMixin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/HomePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkCompress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkCompress.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkPrikols.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkPrikols.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkSize.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkSize.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +85,9 @@
       <updated>1684663769977</updated>
       <workItem from="1684663771324" duration="1133000" />
       <workItem from="1684664934746" duration="7257000" />
+      <workItem from="1684698843586" duration="601000" />
+      <workItem from="1684750859920" duration="1039000" />
+      <workItem from="1684829862236" duration="2509000" />
     </task>
     <servers />
   </component>
@@ -108,6 +106,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/editor$main.coverage" NAME="main Coverage Results" MODIFIED="1684669700746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/editor$main.coverage" NAME="main Coverage Results" MODIFIED="1684840866473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

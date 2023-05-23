@@ -2,10 +2,11 @@
 import {defineComponent} from 'vue'
 import axios from "axios";
 import {EDIT_URL} from "../baseUrl.js";
+import {mapGetters} from "vuex";
 
 export default defineComponent({
   name: "DnlkkHomeButton",
-  data: ()  => ({
+  data: () => ({
     image: {}
   }),
   methods: {
@@ -24,27 +25,27 @@ export default defineComponent({
 
       reader.readAsDataURL(image);
     },
-    uploadImage() {
+    async uploadImage() {
       const {image} = this;
-      console.log(image);
-      this.$store.commit('upload', {image});
+
+      this.$store.commit('upload', image);
     },
-    imgClick(){
+    imgClick() {
       if (this.$store.state.isAuth)
         this.$refs.inputUpload.click();
       else
         this.$store.commit('start');
     }
-  }
+  },
 })
 </script>
 
 <template>
-  <div >
+  <div>
     <input v-show="false"
            ref="inputUpload"
            type="file"
-           @change="handleImage" />
+           @change="handleImage"/>
     <v-img
         @click="imgClick"
         :aspect-ratio="1/1"
@@ -62,7 +63,8 @@ export default defineComponent({
             ミ＿xノ</a>
           <a class="catty_input_logo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/　　　　
             |</a>
-          <a class="catty_input_logo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/　 ヽ　　 ﾉ</a>
+          <a class="catty_input_logo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/　
+            ヽ　　 ﾉ</a>
           <a class="catty_input_logo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│　　|　|　|</a>
           <a class="catty_input_logo">&nbsp;／￣|　　 |　|　|</a>
           <a class="catty_input_logo">(￣ヽ＿_ヽ_)__)</a>

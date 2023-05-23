@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="remove console.log() + add dockerfile with https">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c646848e-1af0-42c2-ad57-c1a4b74c4f6b/storage_v2/_src_/database/danilkk_db.yR8vrg/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/auth/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/editor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/editor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/mixins/profileMixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/mixins/profileMixin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/HomePage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +250,7 @@
       <workItem from="1684060997475" duration="16947000" />
       <workItem from="1684325780975" duration="6979000" />
       <workItem from="1684678536049" duration="898000" />
-      <workItem from="1684697027315" duration="614000" />
+      <workItem from="1684697027315" duration="1239000" />
     </task>
     <task id="LOCAL-00001" summary="`Hi there!`'s commit">
       <created>1683224067825</created>
