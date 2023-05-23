@@ -11,13 +11,20 @@ export default defineComponent({
     DnlkkPrikols,
     DnlkkCompress, DnlkkSize, DnlkkColor},
   props: ['method'],
+  methods: {
+    size(w, w2, h, h2){
+      this.$emit('size', w, w2, h, h2)
+    }
+  }
 })
 </script>
 
 <template>
   <v-container>
     <dnlkk-color v-if="method === 'Цвет'"/>
-    <dnlkk-size v-else-if="method === 'Размер'" />
+    <dnlkk-size
+        @size="size"
+        v-else-if="method === 'Размер'" />
     <dnlkk-compress v-else-if="method === 'Сжатие'"/>
     <dnlkk-prikols v-else/>
   </v-container>

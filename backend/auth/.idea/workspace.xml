@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../editor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../editor/cur.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/cur.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/DnlkkSettingsPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/DnlkkSettingsPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkSize.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkSize.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -10,10 +10,21 @@ export default defineComponent({
   data: () => ({
     method: 'Цвет',
     methods: ['Цвет', 'Размер', 'Сжатие', 'Приколы'],
+    width_l: 0,
+    width_r: 1156,
+    height_t: (787-463)/2,
+    height_b: 463,
   }),
   methods: {
-    setMethod(data){
+    setMethod(data) {
       this.method = data;
+    },
+    size(w, w2, h, h2) {
+      this.width_l = 1156/1920*w;
+      this.width_r = 1156/1920*(1920-w2) - this.width_l;
+      this.height_t = (787-463)/2 + 463/769*h
+      this.height_b =
+          (787-(787-463)/2)/769*(769-h2) - this.height_t;
     }
   },
   computed: {
@@ -23,9 +34,25 @@ export default defineComponent({
 </script>
 
 <template>
+
   <div class="cont">
     <div class="main">
       <div class="photo">
+        <div class="square">
+          <div class="red-square"
+               :style="` margin-top: ${height_t}px;
+              margin-left: ${width_l}px;
+              width: ${width_r}px;
+              height: ${height_b}px;`"
+          />
+          <div class="non-blend-square"
+               :style="` margin-top: ${height_t}px;
+              margin-left: ${width_l}px;
+              width: ${width_r}px;
+              height: ${height_b}px;`"
+          />
+          <div class="another-square"/>
+        </div>
         <v-img :src="getImage" class="image"/>
       </div>
       <div class="settings">
@@ -39,6 +66,7 @@ export default defineComponent({
         </div>
         <dnlkk-settings-panel
             :method="method"
+            @size="size"
             class="panel"/>
       </div>
     </div>
@@ -49,6 +77,7 @@ export default defineComponent({
 * {
   text-align: center;
 }
+
 a {
   cursor: pointer;
 }
@@ -62,6 +91,7 @@ a {
 
   flex-grow: 0;
 }
+
 .main {
   background: rgba(0, 0, 0, 0.55);
 
@@ -93,12 +123,12 @@ a {
 }
 
 .v-img__img--contain {
-   object-fit: contain;
- }
+  object-fit: contain;
+}
 
 
 .settings {
-  padding: 10px 5px;
+  padding: 10px 5px 30px;
   background: var(--header-bgc);
   box-shadow: 0 0 20px var(--header-bgc);
 }
@@ -109,34 +139,70 @@ a {
   grid-template-columns: auto auto auto auto;
 }
 
-.settings-choose a{
+.settings-choose a {
   background: var(--main-bgc);
   color: white;
-  margin: 0 5px;
   border-radius: 50% 50% 0 0;
-  padding: 0 5px;
 }
+
 .panel {
   height: 95%;
   background: var(--main-bgc);
 }
+
 .chosen {
   color: white;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 900;
   text-shadow: 0 0 20px white;
-  transition: text-shadow 0.2s ease-in, color 0.2s
-  ease-in, font-size 0.2s ease-in;
+  transition: text-shadow 0.2s ease-in, color 0.2s ease-in, font-size 0.2s ease-in, margin 0.2s ease-in;
+  margin: 0;
 }
+
 .centered {
   display: flex;
   justify-content: center; /* Align horizontal */
   align-items: center; /* Align vertical */
-  transition: font-size 0.1s ease-in;
+  transition: font-size 0.1s ease-in, margin 0.2s ease-in;
   color: #aaaeb7;
 }
+
 .centered:hover {
   font-size: 20px;
   font-weight: 900;
+  margin: 0 5px;
+}
+
+.red-square {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.non-blend-square{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: overlay;
+  background: white;
+  filter: blur(10px);
+}
+.another-square {
+  position: absolute;
+  background: gray;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+.red-square::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px red;
 }
 </style>
