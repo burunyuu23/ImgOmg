@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT">
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../editor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../editor/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkCompress.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkCompress.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkPrikols.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkPrikols.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkSize.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkSize.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../editor/cur.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/cur.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,6 +223,7 @@
       <workItem from="1684698822220" duration="1219000" />
       <workItem from="1684750884876" duration="845000" />
       <workItem from="1684829961494" duration="1211000" />
+      <workItem from="1684844903194" duration="2218000" />
     </task>
     <task id="LOCAL-00001" summary="`Hi there!`'s commit">
       <created>1683224067825</created>
@@ -374,7 +371,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/auth$main.coverage" NAME="main Coverage Results" MODIFIED="1684829966729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/auth$main.coverage" NAME="main Coverage Results" MODIFIED="1684844939913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/task6_v2$PostgresConnection.coverage" NAME="PostgresConnection Coverage Results" MODIFIED="1684002454181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/task6_v2$jwt_bearer.coverage" NAME="jwt_bearer Coverage Results" MODIFIED="1684063069932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/auth" />
     <SUITE FILE_PATH="coverage/auth$app.coverage" NAME="app Coverage Results" MODIFIED="1684599505521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

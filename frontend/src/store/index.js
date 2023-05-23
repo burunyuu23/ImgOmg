@@ -22,6 +22,9 @@ export default createStore({
     getters: {
         getImage(state){
             return state.image
+        },
+        getProfile(state){
+            return state.profile
         }
     },
     actions: {
