@@ -26,7 +26,7 @@ export default defineComponent({
   <div class="cont">
     <div class="main">
       <div class="photo">
-        <v-img :src="getImage" />
+        <v-img :src="getImage" class="image"/>
       </div>
       <div class="settings">
         <div class="settings-choose">
@@ -59,17 +59,21 @@ a {
 
   margin: 20px 0;
   height: 90vh;
+
+  flex-grow: 0;
 }
 .main {
   background: rgba(0, 0, 0, 0.55);
 
   height: 100%;
+  width: 100%;
 
   display: grid;
 
   grid-template-columns: 2fr 1fr;
   padding: 20px;
   grid-column-gap: 20px;
+  flex-grow: 0;
 }
 
 .photo {
@@ -77,7 +81,21 @@ a {
   box-shadow: 0 0 20px black;
   padding: 20px;
   display: flex;
+
+  position: relative;
 }
+
+.image {
+  position: absolute;
+
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+}
+
+.v-img__img--contain {
+   object-fit: contain;
+ }
+
 
 .settings {
   padding: 10px 5px;

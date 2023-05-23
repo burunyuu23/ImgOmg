@@ -1,8 +1,5 @@
 <script>
 import {defineComponent} from 'vue'
-import axios from "axios";
-import {EDIT_URL} from "../baseUrl.js";
-import {mapGetters} from "vuex";
 
 export default defineComponent({
   name: "DnlkkHomeButton",
