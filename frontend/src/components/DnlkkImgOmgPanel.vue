@@ -67,16 +67,18 @@ export default defineComponent({
   mounted() {
     window.addEventListener("resize", this.myEventHandler);
 
+      const id = setTimeout(() => {
+            this.aspect =
+                this.getImage.width / this.getImage.height;
 
-    setTimeout(() => {
-          this.aspect =
-              this.getImage.width / this.getImage.height;
+            window.dispatchEvent(new
+            Event('resize'));
 
-          window.dispatchEvent(new
-          Event('resize'));
+            if (this.clientW === 1)
+              clearInterval(id);
+            },
+          100)
 
-        },
-        100)
   },
   destroyed() {
     window.removeEventListener("resize", this.myEventHandler);
