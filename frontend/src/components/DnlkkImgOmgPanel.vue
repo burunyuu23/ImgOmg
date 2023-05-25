@@ -36,7 +36,7 @@ export default defineComponent({
               0 :
               (document.getElementsByClassName("image")[0].getBoundingClientRect().width
                   - this.startH / this.getImage.height *
-                  this.getImage.width) / 2 ;
+                  this.getImage.width) / 2;
       this.startW =
           this.isWide ?
               document.getElementsByClassName("image")[0].getBoundingClientRect().width :
@@ -51,18 +51,18 @@ export default defineComponent({
     },
     size(w, w2, h, h2) {
       this.width_l = this.startX +
-          w/this.getImage.width * this.startW
+          w / this.getImage.width * this.startW
 
       this.width_r = this.startW - this.width_l +
           this.startX -
-          (this.getImage.width - w2)/this.getImage.width * this.startW
+          (this.getImage.width - w2) / this.getImage.width * this.startW
 
       this.height_t = this.startY +
-          h/this.getImage.height * this.startH
+          h / this.getImage.height * this.startH
 
       this.height_b = this.startH - this.height_t +
           this.startY -
-          (this.getImage.height - h2)/this.getImage.height * this.startH
+          (this.getImage.height - h2) / this.getImage.height * this.startH
 
       this.$store.commit('setSize', [w, w2, h, h2]);
     },
@@ -72,8 +72,8 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters(['getImage', 'getSize', 'getColor']),
-    isWide(){
-      return this.getImage.width/this.getImage.height >= 1
+    isWide() {
+      return this.getImage.width / this.getImage.height >= 1
     },
     w() {
       return this.getSize[0]
@@ -124,7 +124,7 @@ export default defineComponent({
               height: ${height_b}px;`"
           />
           <div v-if="w2 !== 0"
-                   class="another-square"/>
+               class="another-square"/>
         </div>
         <v-img :src="getImage"
                :style="`
@@ -150,6 +150,7 @@ export default defineComponent({
             :method="method"
             @size="size"
             class="panel"/>
+        <v-btn class="lets_btn">Погнали!</v-btn>
       </div>
     </div>
   </div>
@@ -211,6 +212,10 @@ a {
 
 
 .settings {
+  display: grid;
+
+  grid-template-rows: auto 1fr auto;
+
   padding: 10px 5px 30px;
   background: var(--header-bgc);
   box-shadow: 0 0 20px var(--header-bgc);
@@ -218,7 +223,6 @@ a {
 
 .settings-choose {
   display: grid;
-
   grid-template-columns: auto auto auto auto;
 }
 
@@ -290,5 +294,12 @@ a {
   border: 1px solid red;
   box-sizing: border-box;
   box-shadow: 0 0 20px red;
+}
+
+.lets_btn {
+  color: white;
+  text-shadow: 0 0 5px white;
+  background: var(--main-bgc);
+  box-shadow: none;
 }
 </style>
