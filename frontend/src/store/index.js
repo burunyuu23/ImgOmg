@@ -18,6 +18,19 @@ export default createStore({
             birthdate: '',
             category: '',
         },
+        req: {
+            image: new Image(),
+            methods: {
+                color: [
+                    {brightness: 0},
+                    {saturation: 0},
+                    {contrast: 0},
+                ],
+                size: [0, 0, 0, 0],
+                compress: 100,
+                prikols: []
+            }
+        }
     },
     getters: {
         getImage(state){
@@ -26,10 +39,16 @@ export default createStore({
         getProfile(state){
             return state.profile
         },
+        getSize(state) {
+            return state.req.methods.size
+        }
     },
     actions: {
     },
     mutations: {
+        setSize(state, arr){
+          state.req.methods.size = arr
+        },
         start(state) {
             state.dialog = true;
         },
@@ -129,9 +148,11 @@ export default createStore({
         },
         async upload(state, image) {
             state.isLoaded = true;
+            state.req.image = image
+            console.log(state.req);
 
             await axios.post(`${EDIT_URL}/upload`,
-                {image})
+                state.req)
                 .then(resp => {
                     console.log('SUCCESS!!');
                     state.image = new Image()

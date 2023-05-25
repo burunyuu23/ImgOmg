@@ -13,7 +13,6 @@ export default defineComponent({
     width_r: 1,
     height_t: 0,
     height_b: 1,
-    aspect: 1,
     w: 0,
     w2: 0,
     h: 0,
@@ -23,6 +22,7 @@ export default defineComponent({
     startW: 0,
     startH: 0,
     main_height: 0,
+    id: 0
   }),
   methods: {
     setMethod(data) {
@@ -73,17 +73,15 @@ export default defineComponent({
           this.startY -
           (this.getImage.height - h2)/this.getImage.height * this.startH
 
-      console.log(this.width_l);
-      console.log(this.width_r);
-      console.log(this.height_t);
-      console.log(this.height_b);
+      this.$store.commit('setSize', [this.w, this.w2,
+        this.h, this.h2]);
     },
     resize() {
       this.size(this.w, this.w2, this.h, this.h2);
     },
   },
   computed: {
-    ...mapGetters(['getImage']),
+    ...mapGetters(['getImage', 'getSize']),
     isWide(){
       return this.getImage.width/this.getImage.height >= 1
     }
@@ -91,17 +89,15 @@ export default defineComponent({
   mounted() {
     window.addEventListener("resize", this.myEventHandler);
 
-    const id = setInterval(() => {
-          this.aspect =
-              this.getImage.width / this.getImage.height;
-
+    this.id = setInterval(() => {
           window.dispatchEvent(new
           Event('resize'));
         },
         100)
   },
-  destroyed() {
+  unmounted() {
     window.removeEventListener("resize", this.myEventHandler);
+    clearInterval(this.id)
   },
 })
 </script>
