@@ -25,7 +25,7 @@ export default createStore({
         },
         getProfile(state){
             return state.profile
-        }
+        },
     },
     actions: {
     },

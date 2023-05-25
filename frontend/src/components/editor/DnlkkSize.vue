@@ -16,6 +16,9 @@ export default defineComponent({
       if (newValue < 0) {
         this.width_l = oldValue;
       }
+      if ((newValue >= this.width_r))
+        this.width_l = this.width_r - 1;
+
       this.$emit('size', this.width_l, this.width_r,
           this.height_t, this.height_b)
     },
@@ -23,13 +26,20 @@ export default defineComponent({
       if (newValue < 0) {
         this.width_r = oldValue;
       }
+      if ((newValue <= this.width_l))
+        this.width_r = this.width_l + 1;
+
       this.$emit('size', this.width_l, this.width_r,
           this.height_t, this.height_b)
     },
+
     height_t(newValue, oldValue) {
       if (newValue < 0) {
         this.height_t = oldValue;
       }
+      if ((newValue >= this.height_b))
+        this.height_t = this.height_b - 1;
+
       this.$emit('size', this.width_l, this.width_r,
           this.height_t, this.height_b)
     },
@@ -37,9 +47,16 @@ export default defineComponent({
       if (newValue < 0) {
         this.height_b = oldValue;
       }
+      if ((newValue <= this.height_t))
+        this.height_b = this.height_t + 1;
+
       this.$emit('size', this.width_l, this.width_r,
           this.height_t, this.height_b)
     },
+  },
+  mounted() {
+    this.height_b = this.$store.state.image.height
+    this.width_r = this.$store.state.image.width
   }
 })
 </script>
@@ -56,7 +73,7 @@ export default defineComponent({
             type="number"
         />
         <v-slider
-            max="1920"
+            :max="this.$store.state.image.width"
             min="0"
             :step="1"
             v-model="width_l"
@@ -70,7 +87,7 @@ export default defineComponent({
             type="number"
         />
         <v-slider
-            max="1920"
+            :max="this.$store.state.image.width"
             min="0"
             :step="1"
             v-model="width_r"
@@ -89,7 +106,7 @@ export default defineComponent({
             type="number"
         />
         <v-slider
-            max="769"
+            :max="this.$store.state.image.height"
             min="0"
             :step="1"
             v-model="height_t"
@@ -103,7 +120,7 @@ export default defineComponent({
             type="number"
         />
         <v-slider
-            max="769"
+            :max="this.$store.state.image.height"
             min="0"
             :step="1"
             v-model="height_b"

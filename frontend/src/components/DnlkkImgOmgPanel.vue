@@ -13,23 +13,43 @@ export default defineComponent({
     width_r: 1,
     height_t: 0,
     height_b: 1,
-    clientH: 1,
-    clientW: 1,
     aspect: 1,
     w: 0,
     w2: 0,
     h: 0,
-    h2: 0
+    h2: 0,
+    startX: 0,
+    startY: 0,
+    startW: 0,
+    startH: 0,
+    main_height: 0,
   }),
   methods: {
     setMethod(data) {
       this.method = data;
     },
     myEventHandler(e) {
-      this.clientH =
-          document.getElementsByClassName("image")[0].clientHeight
-      this.clientW =
-          document.getElementsByClassName("image")[0].clientWidth
+      this.startH =
+          document.getElementsByClassName("image")[0].getBoundingClientRect().height;
+      this.startY =
+          document.getElementsByClassName("image")[0].getBoundingClientRect().y -
+          document.getElementsByClassName("photo")[0].getBoundingClientRect().y - 20;
+
+      this.startX =
+          this.isWide ?
+              0 :
+              (document.getElementsByClassName("image")[0].getBoundingClientRect().width
+                  - this.startH / this.getImage.height *
+                  this.getImage.width) / 2 ;
+      this.startW =
+          this.isWide ?
+              document.getElementsByClassName("image")[0].getBoundingClientRect().width :
+              this.startH / this.getImage.height *
+              this.getImage.width;
+
+
+      this.main_height =
+          document.getElementsByClassName("main_height")[0].getBoundingClientRect().height - 40;
 
       this.resize();
     },
@@ -39,46 +59,46 @@ export default defineComponent({
       this.h = h
       this.h2 = h2
 
-      this.width_l =
-          this.clientW / this.getImage.width * w;
+      this.width_l = this.startX +
+          w/this.getImage.width * this.startW
 
-      this.width_r =
-          this.clientW / this.getImage.width *
-          (this.getImage.width - w2) - this.width_l;
+      this.width_r = this.startW - this.width_l +
+          this.startX -
+          (this.getImage.width - w2)/this.getImage.width * this.startW
 
-      this.height_t =
-          (this.clientH - this.clientW/this.aspect) / 2 +
-          this.clientW/this.aspect /
-          this.getImage.height * h
+      this.height_t = this.startY +
+          h/this.getImage.height * this.startH
 
-      this.height_b =
-          (this.clientH -
-              (this.clientH - this.clientW/this.aspect) / 2)
-          / this.getImage.height *
-          (this.getImage.height - h2) - this.height_t;
+      this.height_b = this.startH - this.height_t +
+          this.startY -
+          (this.getImage.height - h2)/this.getImage.height * this.startH
+
+      console.log(this.width_l);
+      console.log(this.width_r);
+      console.log(this.height_t);
+      console.log(this.height_b);
     },
     resize() {
       this.size(this.w, this.w2, this.h, this.h2);
-    }
+    },
   },
   computed: {
     ...mapGetters(['getImage']),
+    isWide(){
+      return this.getImage.width/this.getImage.height >= 1
+    }
   },
   mounted() {
     window.addEventListener("resize", this.myEventHandler);
 
-      const id = setTimeout(() => {
-            this.aspect =
-                this.getImage.width / this.getImage.height;
+    const id = setInterval(() => {
+          this.aspect =
+              this.getImage.width / this.getImage.height;
 
-            window.dispatchEvent(new
-            Event('resize'));
-
-            if (this.clientW === 1)
-              clearInterval(id);
-            },
-          100)
-
+          window.dispatchEvent(new
+          Event('resize'));
+        },
+        100)
   },
   destroyed() {
     window.removeEventListener("resize", this.myEventHandler);
@@ -89,8 +109,9 @@ export default defineComponent({
 <template>
 
   <div class="cont">
-    <div class="main">
-      <div class="photo">
+    <div class="main main_height">
+      <div class="photo"
+           :style="`height: ${main_height}px`">
         <div class="square">
           <div class="red-square"
                :style="` margin-top: ${height_t}px;
@@ -106,7 +127,8 @@ export default defineComponent({
           />
           <div class="another-square"/>
         </div>
-        <v-img :src="getImage" class="image"/>
+        <v-img :src="getImage"
+               class="image"/>
       </div>
       <div class="settings">
         <div class="settings-choose">
@@ -169,10 +191,11 @@ a {
 }
 
 .image {
-  position: absolute;
+  display: flex;
+  align-self: center;
 
-  width: calc(100% - 40px);
-  height: calc(100% - 40px);
+  width: max-content;
+  height: max-content;
 }
 
 .v-img__img--contain {
