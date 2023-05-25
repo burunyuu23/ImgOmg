@@ -5,8 +5,11 @@ export default defineComponent({
   name: "DnlkkCompress",
   data: () => ({
     compress: false,
-    compress_rate: 100
-  })
+  }),
+  mounted() {
+    this.compress = this.compress ||
+        this.$store.state.req.methods.compress < 100
+  }
 })
 </script>
 
@@ -16,7 +19,7 @@ export default defineComponent({
     <v-checkbox v-model="compress"/>
     <v-slider
         v-if="compress"
-        v-model="compress_rate"
+        v-model="$store.state.req.methods.compress"
         :step="1"
         thumb-label="always"/>
   </v-container>

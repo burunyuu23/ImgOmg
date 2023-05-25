@@ -21,11 +21,14 @@ export default createStore({
         req: {
             image: new Image(),
             methods: {
-                color: [
-                    {brightness: 0},
-                    {saturation: 0},
-                    {contrast: 0},
-                ],
+                color: {
+                    brightness: 100,
+                    saturation: 100,
+                    contrast: 100,
+                    sepia: 0,
+                    grayscale: 0,
+                    invert: 0
+                },
                 size: [0, 0, 0, 0],
                 compress: 100,
                 prikols: []
@@ -41,6 +44,9 @@ export default createStore({
         },
         getSize(state) {
             return state.req.methods.size
+        },
+        getColor(state) {
+            return state.req.methods.color
         }
     },
     actions: {
@@ -157,11 +163,15 @@ export default createStore({
                     console.log('SUCCESS!!');
                     state.image = new Image()
                     state.image.src = resp.data.image
+                    state.req.methods.size = [0, state.image.naturalWidth, 0, state.image.naturalHeight]
+                    console.log(state.req.methods.size);
                 })
                 .catch(err => {
                     console.log('FAILURE!!');
                     console.log(err);
                 });
+            state.req.methods.size = [0, state.image.naturalWidth, 0, state.image.naturalHeight]
+            console.log(state.req);
         },
     },
     modules: {}

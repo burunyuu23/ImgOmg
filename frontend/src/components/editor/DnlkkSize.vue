@@ -55,8 +55,14 @@ export default defineComponent({
     },
   },
   mounted() {
-    this.height_b = this.$store.state.image.height
-    this.width_r = this.$store.state.image.width
+    this.width_l =
+        this.$store.state.req.methods.size[0]
+    this.width_r =
+        this.$store.state.req.methods.size[1]
+    this.height_t =
+        this.$store.state.req.methods.size[2]
+    this.height_b =
+        this.$store.state.req.methods.size[3]
   }
 })
 </script>

@@ -1,47 +1,107 @@
 <script>
 import {defineComponent} from 'vue'
+import {mapGetters} from "vuex";
 
 export default defineComponent({
   name: "DnlkkColor",
-  data: () => ({
-    brightness: 0,
-    saturation: 0,
-    contrast: 0,
-  })
 })
 </script>
 
 <template>
-  <v-container class="cont">
-    <div class=" text-capitalize">Яркость</div>
-    <v-slider
-        max="100"
-        min="-100"
-        :step="1"
-        v-model="brightness"
-        thumb-label="always"/>
-  </v-container>
-  <v-container class="cont">
-    <div class=" text-capitalize">Насыщенность</div>
-    <v-slider
-        class=""
-        max="100"
-        min="-100"
-        :step="1"
-        v-model="saturation"
-        thumb-label="always"/>
-  </v-container>
-  <v-container class="cont">
-    <div class=" text-capitalize">Контрастность</div>
-    <v-slider
-        class=""
-        max="100"
-        min="-100"
-        :step="1"
-        v-model="contrast"
-        thumb-label="always"
-        aria-label="down"/>
-  </v-container>
+  <v-row>
+    <v-col cols="6">
+      <v-container class="cont">
+        <div class=" text-capitalize">Яркость</div>
+        <v-slider
+            max="200"
+            min="0"
+            :step="1"
+            v-model="$store.state.req.methods.color.brightness"
+            thumb-label="always"/>
+      </v-container>
+    </v-col>
+    <v-col cols="6">
+      <v-container class="cont">
+        <div class=" text-capitalize">Насыщенность</div>
+        <v-slider
+            class=""
+            max="200"
+            min="0"
+            :step="1"
+            v-model="$store.state.req.methods.color.saturation"
+            thumb-label="always"/>
+      </v-container>
+    </v-col>
+  </v-row>
+
+  <v-row>
+    <v-col cols="6">
+      <v-container class="cont">
+        <div class=" text-capitalize">Контрастность</div>
+        <v-slider
+            class=""
+            max="200"
+            min="0"
+            :step="1"
+            v-model="$store.state.req.methods.color.contrast"
+            thumb-label="always"
+            aria-label="down"/>
+      </v-container>
+    </v-col>
+    <v-col cols="6">
+      <v-container class="cont">
+        <div class=" text-capitalize">Сепия</div>
+        <v-slider
+            class=""
+            max="100"
+            min="0"
+            :step="1"
+            v-model="$store.state.req.methods.color.sepia"
+            thumb-label="always"
+            aria-label="down"/>
+      </v-container>
+    </v-col>
+  </v-row>
+
+  <v-row>
+    <v-col cols="6">
+      <v-container class="cont">
+        <div class=" text-capitalize">Серость...</div>
+        <v-slider
+            class=""
+            max="100"
+            min="0"
+            :step="1"
+            v-model="$store.state.req.methods.color.grayscale"
+            thumb-label="always"
+            aria-label="down"/>
+      </v-container>
+    </v-col>
+    <v-col cols="6">
+      <v-container class="cont">
+        <div class=" text-capitalize">Инверсия</div>
+        <v-slider
+            class=""
+            max="100"
+            min="0"
+            :step="1"
+            v-model="$store.state.req.methods.color.invert"
+            thumb-label="always"
+            aria-label="down"/>
+      </v-container>
+    </v-col>
+  </v-row>
+
+  <v-row>
+    <v-col cols="6">
+
+    </v-col>
+    <v-col cols="6">
+
+    </v-col>
+  </v-row>
+
+
 </template>
 
 

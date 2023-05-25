@@ -13,10 +13,6 @@ export default defineComponent({
     width_r: 1,
     height_t: 0,
     height_b: 1,
-    w: 0,
-    w2: 0,
-    h: 0,
-    h2: 0,
     startX: 0,
     startY: 0,
     startW: 0,
@@ -54,11 +50,6 @@ export default defineComponent({
       this.resize();
     },
     size(w, w2, h, h2) {
-      this.w = w
-      this.w2 = w2
-      this.h = h
-      this.h2 = h2
-
       this.width_l = this.startX +
           w/this.getImage.width * this.startW
 
@@ -73,18 +64,29 @@ export default defineComponent({
           this.startY -
           (this.getImage.height - h2)/this.getImage.height * this.startH
 
-      this.$store.commit('setSize', [this.w, this.w2,
-        this.h, this.h2]);
+      this.$store.commit('setSize', [w, w2, h, h2]);
     },
     resize() {
       this.size(this.w, this.w2, this.h, this.h2);
     },
   },
   computed: {
-    ...mapGetters(['getImage', 'getSize']),
+    ...mapGetters(['getImage', 'getSize', 'getColor']),
     isWide(){
       return this.getImage.width/this.getImage.height >= 1
-    }
+    },
+    w() {
+      return this.getSize[0]
+    },
+    w2() {
+      return this.getSize[1]
+    },
+    h() {
+      return this.getSize[2]
+    },
+    h2() {
+      return this.getSize[3]
+    },
   },
   mounted() {
     window.addEventListener("resize", this.myEventHandler);
@@ -109,7 +111,7 @@ export default defineComponent({
       <div class="photo"
            :style="`height: ${main_height}px`">
         <div class="square">
-          <div class="red-square"
+          <div v-if="w2 !== 0" class="red-square"
                :style="` margin-top: ${height_t}px;
               margin-left: ${width_l}px;
               width: ${width_r}px;
@@ -121,9 +123,18 @@ export default defineComponent({
               width: ${width_r}px;
               height: ${height_b}px;`"
           />
-          <div class="another-square"/>
+          <div v-if="w2 !== 0"
+                   class="another-square"/>
         </div>
         <v-img :src="getImage"
+               :style="`
+               filter: brightness(${this.getColor.brightness}%)
+               saturate(${this.getColor.saturation}%)
+               contrast(${this.getColor.contrast}%)
+
+               grayscale(${this.getColor.grayscale}%)
+                sepia(${this.getColor.sepia}%)
+                invert(${this.getColor.invert}%);`"
                class="image"/>
       </div>
       <div class="settings">
@@ -259,7 +270,7 @@ a {
   z-index: 2;
   mix-blend-mode: overlay;
   background: white;
-  filter: blur(10px);
+  filter: blur(12px);
 }
 
 .another-square {

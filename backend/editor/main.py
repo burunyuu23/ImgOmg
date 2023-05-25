@@ -28,7 +28,7 @@ def index():
 
     img = base64_to_pil(input_json['image'])
     img.save('cur.jpg', 'JPEG')
-
+    print(input_json)
     dictToReturn = {'image': input_json['image']}
     return jsonify(dictToReturn)
 
