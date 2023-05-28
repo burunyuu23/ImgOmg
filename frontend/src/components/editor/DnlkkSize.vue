@@ -35,6 +35,8 @@ export default defineComponent({
       }
       if ((newValue <= this.width_l))
         this.width_r = this.width_l + 1;
+      if (newValue > this.getImage.width)
+        this.width_r = this.getImage.width
 
       this.$emit('size', this.width_l, this.width_r,
           this.height_t, this.height_b)
@@ -56,13 +58,15 @@ export default defineComponent({
       }
       if ((newValue <= this.height_t))
         this.height_b = this.height_t + 1;
+      if (newValue > this.getImage.height)
+        this.height_b = this.getImage.height
 
       this.$emit('size', this.width_l, this.width_r,
           this.height_t, this.height_b)
     },
   },
   computed: {
-    ...mapGetters(['getSize'])
+    ...mapGetters(['getSize', 'getImage'])
   },
   mounted() {
     this.width_l =

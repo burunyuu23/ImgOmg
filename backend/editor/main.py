@@ -15,9 +15,9 @@ def index():
     print(input_json)
 
     editor = Editor(input_json['image'], input_json['methods'])
-    editor.parse()
+    img = editor.parse()
 
-    dictToReturn = {'image': input_json['image']}
+    dictToReturn = {'image': img}
     return jsonify(dictToReturn)
 
 

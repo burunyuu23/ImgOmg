@@ -7,6 +7,8 @@ export default defineComponent({
   name: "DnlkkImgOmgPanel",
   components: {DnlkkSettingsPanel},
   data: () => ({
+    shouldRender: false,
+    refresh: false,
     method: 'Цвет',
     methods: ['Цвет', 'Размер', 'Сжатие', 'Приколы'],
     width_l: 0,
@@ -69,11 +71,31 @@ export default defineComponent({
     resize() {
       this.size(this.w, this.w2, this.h, this.h2);
     },
+    upload() {
+      this.shouldRender = true;
+      this.$store.commit('upload', this.getImage.src);
+      this.rerender();
+    },
+    rerender() {
+      setTimeout(() => this.shouldRender = false, 100);
+    },
+    refreshing() {
+      this.refresh = true;
+      this.$store.commit('refresh');
+      setTimeout(() => this.refresh = false, 1000);
+    }
   },
   computed: {
     ...mapGetters(['getImage', 'getSize', 'getColor']),
     isWide() {
-      return this.getImage.width / this.getImage.height >= 1
+      let image_aspect = this.getImage.width / this.getImage.height
+      let photo_aspect =
+          document.getElementsByClassName("main_height")[0].getBoundingClientRect().width /
+          document.getElementsByClassName("main_height")[0].getBoundingClientRect().height
+      console.log(image_aspect)
+      console.log(document.getElementsByClassName("main_height")[0].getBoundingClientRect())
+      console.log(photo_aspect)
+      return image_aspect >= photo_aspect
     },
     w() {
       return this.getSize[0]
@@ -106,19 +128,29 @@ export default defineComponent({
 
 <template>
 
-  <div class="cont">
+  <div
+      class="cont"
+      v-if="!shouldRender">
     <div class="main main_height">
       <div class="photo"
            :style="`height: ${main_height}px`">
         <div class="square">
           <div v-if="w2 !== 0" class="red-square"
-               :style="` margin-top: ${height_t}px;
+               :style="
+                (this.refresh ?
+               `transition: margin 0.5s ease,
+               width 0.5s ease, height 0.5s ease;`
+               : '') +`margin-top: ${height_t}px;
               margin-left: ${width_l}px;
               width: ${width_r}px;
               height: ${height_b}px;`"
           />
           <div class="non-blend-square"
-               :style="` margin-top: ${height_t}px;
+               :style="
+              (this.refresh ?
+               `transition: margin 0.5s ease,
+               width 0.5s ease, height 0.5s ease;`
+               : '') + `margin-top: ${height_t}px;
               margin-left: ${width_l}px;
               width: ${width_r}px;
               height: ${height_b}px;`"
@@ -127,15 +159,24 @@ export default defineComponent({
                class="another-square"/>
         </div>
         <v-img :src="getImage"
-               :style="`
-               filter: brightness(${this.getColor.brightness}%)
+               :style="
+               (this.refresh ?
+               `transition: filter 1s linear;`
+               : '') +
+               `filter: brightness(${this.getColor.brightness}%)
                saturate(${this.getColor.saturation}%)
                contrast(${this.getColor.contrast}%)
-
                grayscale(${this.getColor.grayscale}%)
                 sepia(${this.getColor.sepia}%)
                 invert(${this.getColor.invert}%);`"
                class="image"/>
+        <div class="image image_gradient"
+        :style="`
+        margin: ${-10}px;
+        width: ${this.startW+20}px;
+        height: ${this.startH+20}px;`">
+
+        </div>
       </div>
       <div class="settings">
         <div class="settings-choose">
@@ -152,18 +193,24 @@ export default defineComponent({
             class="panel"/>
         <div class="btns">
           <v-btn class="lets_btn"
-                 @click="this.$store.commit('upload',
-        this.getImage.src)">
+                 @click="upload">
             Погнали!
           </v-btn>
           <v-btn class="lets_btn"
-                 @click="this.$store.commit('refresh')">
+                 @click="refreshing()">
             Обнулить
           </v-btn>
         </div>
       </div>
-      </div>
     </div>
+  </div>
+  <div
+      class="cont"
+      v-else>
+    <div class="main main_height white_text">
+      Чето делаем...
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -213,7 +260,7 @@ a {
   align-self: center;
 
   width: max-content;
-  height: max-content;
+  object-fit: fill;
 }
 
 .v-img__img--contain {
@@ -302,9 +349,37 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  border: 1px solid red;
+  border: 2px solid red;
   box-sizing: border-box;
-  box-shadow: 0 0 20px red;
+  box-shadow: 0 0 20px black;
+
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 10s rotate ease infinite;
+}
+.image_gradient {
+   position: absolute;
+   z-index: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 18px;
+   border-radius: 5px;
+   box-shadow: inset 0 0 12px 12px black, inset 0 0 3px 2px
+   white;
+
+   border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+   animation: 10s rotate ease infinite;
+ }
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
 
 .lets_btn {
@@ -318,5 +393,13 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 20px;
+}
+
+.white_text {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
 }
 </style>

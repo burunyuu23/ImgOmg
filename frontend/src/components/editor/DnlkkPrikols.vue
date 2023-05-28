@@ -19,11 +19,11 @@ export default defineComponent({
         v-model="$store.state.req.methods.prikols"
         :items="prikols"/>
     <div
-        class="grid"
         v-if="$store.state.req.methods.prikols !== ''">
       <div>Выбран прикол:</div>
       <div> {{ $store.state.req.methods.prikols }}</div>
-
+      <div
+          class="grid">
       <hr class="black"/>
       <v-btn
           class="btn"
@@ -31,6 +31,7 @@ export default defineComponent({
         Мне не нужны приколы
       </v-btn>
       <hr class="black"/>
+      </div>
     </div>
   </v-container>
 </template>
@@ -62,7 +63,9 @@ export default defineComponent({
 
 .grid {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  align-items: center;
 
 }
 </style>
