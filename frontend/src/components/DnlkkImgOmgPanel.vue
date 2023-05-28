@@ -83,6 +83,9 @@ export default defineComponent({
       this.refresh = true;
       this.$store.commit('refresh');
       setTimeout(() => this.refresh = false, 1000);
+    },
+    save() {
+
     }
   },
   computed: {
@@ -171,12 +174,11 @@ export default defineComponent({
                 invert(${this.getColor.invert}%);`"
                class="image"/>
         <div class="image image_gradient"
-        :style="`
+             :style="`
         margin-left: ${this.startX-10}px;
         margin-right: ${this.startY-10}px;
         width: ${this.startW+20}px;
         height: ${this.startH+20}px;`">
-
         </div>
       </div>
       <div class="settings">
@@ -193,13 +195,17 @@ export default defineComponent({
             @size="size"
             class="panel"/>
         <div class="btns">
-          <v-btn class="lets_btn"
+          <v-btn class="lets_btn upload-btn"
                  @click="upload">
             Погнали!
           </v-btn>
-          <v-btn class="lets_btn"
+          <v-btn class="lets_btn refresh-btn"
                  @click="refreshing()">
             Обнулить
+          </v-btn>
+          <v-btn class="lets_btn save-btn"
+                 @click="save()">
+            Сохранить
           </v-btn>
         </div>
       </div>
@@ -357,26 +363,27 @@ a {
   border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
   animation: 10s rotate ease infinite;
 }
-.image_gradient {
-   position: absolute;
-   z-index: 0;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   padding: 18px;
-   border-radius: 5px;
-   box-shadow: inset 0 0 12px 12px black, inset 0 0 3px 2px
-   white;
 
-   border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
-   animation: 10s rotate ease infinite;
- }
+.image_gradient {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 12px 12px black, inset 0 0 3px 2px white;
+
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 10s rotate ease infinite;
+}
 
 @keyframes rotate {
   to {
     --angle: 360deg;
   }
 }
+
 @property --angle {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -392,8 +399,19 @@ a {
 
 .btns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "one two"
+                        "three three";
   column-gap: 20px;
+  row-gap: 20px;
+}
+.upload-btn{
+  grid-area: one;
+}
+.refresh-btn{
+  grid-area: two;
+}
+.save-btn{
+  grid-area: three;
 }
 
 .white_text {

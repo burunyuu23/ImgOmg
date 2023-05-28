@@ -30,15 +30,18 @@ export default createStore({
                     invert: 0
                 },
                 size: [0, 0, 0, 0],
-                compress: 100,
+                compress: 102,
                 prikols: ''
             }
-        }
+        },
+        compress_size: 0
     },
     getters: {
         getImage(state){
-            console.log(state.image)
             return state.image
+        },
+        getReqImage(state){
+            return state.req.image
         },
         getProfile(state){
             return state.profile
@@ -156,11 +159,14 @@ export default createStore({
         async upload(state, image) {
             state.isLoaded = true;
             state.req.image = image
+            console.log(image)
 
             await axios.post(`${EDIT_URL}/upload`,
                 state.req)
                 .then(resp => {
                     console.log('SUCCESS!!');
+                    if (state.req.methods.compress !== 102)
+                        state.req.image = resp.data.image
                     state.image = new Image()
                     state.image.src = resp.data.image
                     state.req.methods.size = [0, state.image.naturalWidth, 0, state.image.naturalHeight]
@@ -172,6 +178,21 @@ export default createStore({
                 });
             this.commit('refresh')
         },
+        async get_compress(state) {
+            await axios.post(`${EDIT_URL}/compress_size`,
+                {image: state.req.image, rate: state.req.methods.compress})
+                .then(resp => {
+                    console.log('SUCCESS!!');
+
+                    state.image = new Image()
+                    state.image.src = resp.data.image
+                    state.compress_size = resp.data.size
+                })
+                .catch(err => {
+                    console.log('FAILURE!!');
+                    console.log(err);
+                });
+        },
         refresh(state){
             state.req.methods.color = {
                 brightness: 100,
@@ -180,7 +201,7 @@ export default createStore({
                 sepia: 0,
                 grayscale: 0,
                 invert: 0}
-            state.req.methods.compress = 100
+            state.req.methods.compress = state.req.methods.compress === 102 ? 102 : 101
             state.req.methods.size = [0, state.image.naturalWidth, 0, state.image.naturalHeight]
             state.req.methods.prikols = ''
         }

@@ -7,17 +7,21 @@ from modules import color, size, compress, prikols
 
 
 class Editor:
-    def __init__(self, img, json_methods):
+    def __init__(self, img):
         self.img = Editor.base64_to_pil(img)
         self.img.save('cur.jpg', 'JPEG')
-        self.json_methods = json_methods
 
-    def parse(self):
-        self.img = color.parse(self.img,  self.json_methods['color'])
-        self.img = size.parse(self.img,  self.json_methods['size'])
-        # self.img = compress.parse(self.img,  self.json_methods['compress'])
-        # self.img = prikols.parse(self.img,  self.json_methods['prikols'])
-        return Editor.pil_to_base64(self.img)
+    def parse(self, json_methods):
+        self.img = color.parse(self.img,  json_methods['color'])
+        self.img = size.parse(self.img,  json_methods['size'])
+        self.img = compress.parse(self.img, json_methods['compress'])
+        # self.img = prikols.parse(self.img,  json_methods['prikols'])
+        return Editor.pil_to_base64(self.img, json_methods['compress'])
+
+    def get_compress(self, rate):
+        img, filesize = compress.get_bytes(self.img, rate)
+        img = Editor.pil_to_base64(img)
+        return img, filesize
 
     @staticmethod
     def base64_to_pil(img_base64):
@@ -31,9 +35,9 @@ class Editor:
         return pil_image
 
     @staticmethod
-    def pil_to_base64(img):
+    def pil_to_base64(img, rate=100):
         buffered = BytesIO()
-        img.save(buffered, format="JPEG")
+        img.save(buffered, format="JPEG", quality=rate)
         buffered.seek(0)
         img_byte = buffered.getvalue()
         return "data:image/png;base64," + base64.b64encode(img_byte).decode()

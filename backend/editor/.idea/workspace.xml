@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2210e0-ec44-43c5-ad3b-d365489afa01" name="Changes" comment="">
+    <list default="true" id="5b2210e0-ec44-43c5-ad3b-d365489afa01" name="Changes" comment="backend: color is done! + custom sepia mode, lol">
       <change beforePath="$PROJECT_DIR$/../auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cur.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cur.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cur_size.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cur_size.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/color.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/color.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/compress.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/compress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/size.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/size.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +94,16 @@
       <workItem from="1685008911339" duration="915000" />
       <workItem from="1685023029718" duration="4132000" />
       <workItem from="1685036606916" duration="6888000" />
-      <workItem from="1685270167067" duration="9296000" />
+      <workItem from="1685270167067" duration="17444000" />
     </task>
+    <task id="LOCAL-00001" summary="backend: color is done! + custom sepia mode, lol">
+      <created>1685292502246</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685292502246</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,7 +120,11 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="backend: color is done! + custom sepia mode, lol" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend: color is done! + custom sepia mode, lol" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/editor$main.coverage" NAME="main Coverage Results" MODIFIED="1685279758614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/editor$main.coverage" NAME="main Coverage Results" MODIFIED="1685297760937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
