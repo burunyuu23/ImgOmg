@@ -2,6 +2,7 @@
 import {defineComponent} from 'vue'
 import DnlkkSettingsPanel from "./DnlkkSettingsPanel.vue";
 import {mapGetters} from "vuex";
+import { saveAs } from 'file-saver';
 
 export default defineComponent({
   name: "DnlkkImgOmgPanel",
@@ -85,7 +86,15 @@ export default defineComponent({
       setTimeout(() => this.refresh = false, 1000);
     },
     save() {
-
+      const byteCharacters =
+          atob(this.$store.getters.getImage.src.split(',')[1]);
+      const byteNumbers = new Array(byteCharacters.length);
+      for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+      }
+      const byteArray = new Uint8Array(byteNumbers);
+      const blob = new Blob([byteArray], { type: 'image/jpeg' });
+      saveAs(blob, 'ImageOMG.jpg');
     }
   },
   computed: {
