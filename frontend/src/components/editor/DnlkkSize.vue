@@ -1,5 +1,6 @@
 <script>
 import {defineComponent} from 'vue'
+import {mapGetters} from "vuex";
 
 export default defineComponent({
   name: "DnlkkSize",
@@ -12,6 +13,12 @@ export default defineComponent({
   }),
   methods: {},
   watch: {
+    getSize(newValue) {
+      this.width_l = newValue[0]
+      this.width_r = newValue[1]
+      this.height_t = newValue[2]
+      this.height_b = newValue[3]
+    },
     width_l(newValue, oldValue) {
       if (newValue < 0) {
         this.width_l = oldValue;
@@ -54,15 +61,18 @@ export default defineComponent({
           this.height_t, this.height_b)
     },
   },
+  computed: {
+    ...mapGetters(['getSize'])
+  },
   mounted() {
     this.width_l =
-        this.$store.state.req.methods.size[0]
+        this.getSize[0]
     this.width_r =
-        this.$store.state.req.methods.size[1]
+        this.getSize[1]
     this.height_t =
-        this.$store.state.req.methods.size[2]
+        this.getSize[2]
     this.height_b =
-        this.$store.state.req.methods.size[3]
+        this.getSize[3]
   }
 })
 </script>
@@ -101,9 +111,9 @@ export default defineComponent({
       </v-col>
     </v-row>
   </v-container>
-    <v-container class="cont">
-      <div class=" text-capitalize">Высота</div>
-      <v-row>
+  <v-container class="cont">
+    <div class=" text-capitalize">Высота</div>
+    <v-row>
       <v-col cols="6">
         <v-text-field
             v-model="height_t"
@@ -132,7 +142,7 @@ export default defineComponent({
             v-model="height_b"
             thumb-label="always"/>
       </v-col>
-  </v-row>
+    </v-row>
   </v-container>
   <v-container class="cont">
     <div class=" text-capitalize">Ориентация</div>

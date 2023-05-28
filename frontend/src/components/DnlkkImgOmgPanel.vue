@@ -150,10 +150,20 @@ export default defineComponent({
             :method="method"
             @size="size"
             class="panel"/>
-        <v-btn class="lets_btn">Погнали!</v-btn>
+        <div class="btns">
+          <v-btn class="lets_btn"
+                 @click="this.$store.commit('upload',
+        this.getImage.src)">
+            Погнали!
+          </v-btn>
+          <v-btn class="lets_btn"
+                 @click="this.$store.commit('refresh')">
+            Обнулить
+          </v-btn>
+        </div>
+      </div>
       </div>
     </div>
-  </div>
 </template>
 
 <style scoped>
@@ -244,6 +254,7 @@ a {
   text-shadow: 0 0 20px white;
   transition: text-shadow 0.2s ease-in, color 0.2s ease-in, font-size 0.2s ease-in, margin 0.2s ease-in;
   margin: 0;
+  z-index: 2;
 }
 
 .centered {
@@ -301,5 +312,11 @@ a {
   text-shadow: 0 0 5px white;
   background: var(--main-bgc);
   box-shadow: none;
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
 }
 </style>

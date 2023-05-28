@@ -31,12 +31,13 @@ export default createStore({
                 },
                 size: [0, 0, 0, 0],
                 compress: 100,
-                prikols: []
+                prikols: ''
             }
         }
     },
     getters: {
         getImage(state){
+            console.log(state.image)
             return state.image
         },
         getProfile(state){
@@ -155,7 +156,6 @@ export default createStore({
         async upload(state, image) {
             state.isLoaded = true;
             state.req.image = image
-            console.log(state.req);
 
             await axios.post(`${EDIT_URL}/upload`,
                 state.req)
@@ -170,9 +170,20 @@ export default createStore({
                     console.log('FAILURE!!');
                     console.log(err);
                 });
-            state.req.methods.size = [0, state.image.naturalWidth, 0, state.image.naturalHeight]
-            console.log(state.req);
+            this.commit('refresh')
         },
+        refresh(state){
+            state.req.methods.color = {
+                brightness: 100,
+                saturation: 100,
+                contrast: 100,
+                sepia: 0,
+                grayscale: 0,
+                invert: 0}
+            state.req.methods.compress = 100
+            state.req.methods.size = [0, state.image.naturalWidth, 0, state.image.naturalHeight]
+            state.req.methods.prikols = ''
+        }
     },
     modules: {}
 })
