@@ -8,15 +8,10 @@
       <change beforePath="$PROJECT_DIR$/../auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cur.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cur.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cur_size.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cur_size.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/color.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/color.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/compress.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/compress.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/module.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/prikols.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/prikols.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/size.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/size.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkSize.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/editor/DnlkkSize.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +91,7 @@
       <workItem from="1685008911339" duration="915000" />
       <workItem from="1685023029718" duration="4132000" />
       <workItem from="1685036606916" duration="6888000" />
-      <workItem from="1685270167067" duration="7198000" />
+      <workItem from="1685270167067" duration="9296000" />
     </task>
     <servers />
   </component>

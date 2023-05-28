@@ -13,7 +13,7 @@ class Editor:
         self.json_methods = json_methods
 
     def parse(self):
-        # self.img = color.parse(self.img,  self.json_methods['color'])
+        self.img = color.parse(self.img,  self.json_methods['color'])
         self.img = size.parse(self.img,  self.json_methods['size'])
         # self.img = compress.parse(self.img,  self.json_methods['compress'])
         # self.img = prikols.parse(self.img,  self.json_methods['prikols'])
