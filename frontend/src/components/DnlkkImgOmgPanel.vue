@@ -104,9 +104,9 @@ export default defineComponent({
       let photo_aspect =
           document.getElementsByClassName("main_height")[0].getBoundingClientRect().width /
           document.getElementsByClassName("main_height")[0].getBoundingClientRect().height
-      console.log(image_aspect)
-      console.log(document.getElementsByClassName("main_height")[0].getBoundingClientRect())
-      console.log(photo_aspect)
+      // console.log(image_aspect)
+      // console.log(document.getElementsByClassName("main_height")[0].getBoundingClientRect())
+      // console.log(photo_aspect)
       return image_aspect >= photo_aspect
     },
     w() {

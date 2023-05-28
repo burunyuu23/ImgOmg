@@ -71,7 +71,7 @@ export default createStore({
         },
         async registration(state, data) {
             // state.dialog = false;
-            console.log(data);
+            // console.log(data);
             await axios.post(`${AUTH_URL}/user/signup`,
                 data)
                 .then(response => {
@@ -79,7 +79,7 @@ export default createStore({
                         expires: 7,
                         path: ''
                     });
-                    console.log(response)
+                    // console.log(response)
                     state.response = "Спасибо за регистрацию!";
                     state.dialog = false;
                     state.isAuth = true;
@@ -95,7 +95,7 @@ export default createStore({
                 })
         },
         async login(state, data) {
-            console.log(data);
+            // console.log(data);
             await axios.post(`${AUTH_URL}/user/login`,
                 data)
                 .then(response => {
@@ -117,7 +117,7 @@ export default createStore({
                     this.commit('auth');
                 })
 
-            console.log(state.profile)
+            // console.log(state.profile)
         },
         async logout(state) {
             axios.get(`${AUTH_URL}/user/logout`)
@@ -163,12 +163,12 @@ export default createStore({
         async upload(state, image) {
             state.isLoaded = true;
             state.req.image = image
-            console.log(image)
+            // console.log(image)
 
             await axios.post(`${EDIT_URL}/upload`,
                 state.req)
                 .then(resp => {
-                    console.log('SUCCESS!!');
+                    // console.log('SUCCESS!!');
                     if (state.req.methods.compress !== 102)
                         state.req.image = resp.data.image
 
@@ -179,8 +179,8 @@ export default createStore({
                     console.log(state.req.methods.size);
                 })
                 .catch(err => {
-                    console.log('FAILURE!!');
-                    console.log(err);
+                    // console.log('FAILURE!!');
+                    // console.log(err);
                 });
             this.commit('refresh')
         },
@@ -188,7 +188,7 @@ export default createStore({
             await axios.post(`${EDIT_URL}/compress_size`,
                 {image: state.req.image, rate: state.req.methods.compress})
                 .then(resp => {
-                    console.log('SUCCESS!!');
+                    // console.log('SUCCESS!!');
 
                     state.save_image = state.image
                     state.image = new Image()
@@ -196,30 +196,37 @@ export default createStore({
                     state.compress_size = resp.data.size
                 })
                 .catch(err => {
-                    console.log('FAILURE!!');
-                    console.log(err);
+                    // console.log('FAILURE!!');
+                    // console.log(err);
                 });
+            state.req.methods.prikols = {
+                prikol: '',
+                file: ''
+            }
         },
         async get_prikol(state) {
             await axios.post(`${EDIT_URL}/pre_prikol`,
                 {image: state.req.image, prikol: state.req.methods.prikols})
                 .then(resp => {
-                    console.log('SUCCESS!!');
+                    // console.log('SUCCESS!!');
 
+                    state.save_image = state.image
                     state.image = new Image()
                     state.image.src = resp.data.image
 
                     state.req.methods.prikols.file = resp.data.file
                 })
                 .catch(err => {
-                    console.log('FAILURE!!');
-                    console.log(err);
+                    // console.log('FAILURE!!');
+                    // console.log(err);
                 });
+            state.req.methods.compress = state.req.methods.compress === 102 ? 102 : 101
+        },
+        refreshing(state){
+            state.image = state.save_image
+            this.commit('refresh')
         },
         refresh(state){
-            if (state.req.methods.prikols.file !== '') {
-                state.image = state.save_image
-            }
             state.req.methods.color = {
                 brightness: 100,
                 saturation: 100,

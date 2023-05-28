@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 
 from editor_module import Editor
-from modules import compress
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -16,8 +15,6 @@ def upload():
     global editor
 
     input_json = request.get_json(force=True)
-
-    print(input_json)
 
     editor = Editor(input_json['image'])
     img = editor.parse(input_json['methods'])

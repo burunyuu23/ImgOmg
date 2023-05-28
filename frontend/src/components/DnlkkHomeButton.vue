@@ -9,7 +9,7 @@ export default defineComponent({
   methods: {
     handleImage(e) {
       const image = e.target.files[0];
-      console.log(image);
+      // console.log(image);
       this.base64_image(image)
     },
     base64_image(image) {
