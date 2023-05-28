@@ -172,7 +172,8 @@ export default defineComponent({
                class="image"/>
         <div class="image image_gradient"
         :style="`
-        margin: ${-10}px;
+        margin-left: ${this.startX-10}px;
+        margin-right: ${this.startY-10}px;
         width: ${this.startW+20}px;
         height: ${this.startH+20}px;`">
 
