@@ -11,6 +11,7 @@ export default createStore({
         dialog: false,
         response: '',
         image: new Image(),
+        save_image: new Image(),
         profile: {
             login: '',
             fullname: '',
@@ -31,7 +32,10 @@ export default createStore({
                 },
                 size: [0, 0, 0, 0],
                 compress: 102,
-                prikols: ''
+                prikols: {
+                    prikol: '',
+                    file: ''
+                }
             }
         },
         compress_size: 0
@@ -167,6 +171,8 @@ export default createStore({
                     console.log('SUCCESS!!');
                     if (state.req.methods.compress !== 102)
                         state.req.image = resp.data.image
+
+                    state.save_image = state.image
                     state.image = new Image()
                     state.image.src = resp.data.image
                     state.req.methods.size = [0, state.image.naturalWidth, 0, state.image.naturalHeight]
@@ -184,6 +190,7 @@ export default createStore({
                 .then(resp => {
                     console.log('SUCCESS!!');
 
+                    state.save_image = state.image
                     state.image = new Image()
                     state.image.src = resp.data.image
                     state.compress_size = resp.data.size
@@ -193,7 +200,26 @@ export default createStore({
                     console.log(err);
                 });
         },
+        async get_prikol(state) {
+            await axios.post(`${EDIT_URL}/pre_prikol`,
+                {image: state.req.image, prikol: state.req.methods.prikols})
+                .then(resp => {
+                    console.log('SUCCESS!!');
+
+                    state.image = new Image()
+                    state.image.src = resp.data.image
+
+                    state.req.methods.prikols.file = resp.data.file
+                })
+                .catch(err => {
+                    console.log('FAILURE!!');
+                    console.log(err);
+                });
+        },
         refresh(state){
+            if (state.req.methods.prikols.file !== '') {
+                state.image = state.save_image
+            }
             state.req.methods.color = {
                 brightness: 100,
                 saturation: 100,
@@ -203,7 +229,10 @@ export default createStore({
                 invert: 0}
             state.req.methods.compress = state.req.methods.compress === 102 ? 102 : 101
             state.req.methods.size = [0, state.image.naturalWidth, 0, state.image.naturalHeight]
-            state.req.methods.prikols = ''
+            state.req.methods.prikols = {
+                prikol: '',
+                file: ''
+            }
         }
     },
     modules: {}

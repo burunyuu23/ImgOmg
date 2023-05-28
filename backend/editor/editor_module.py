@@ -15,8 +15,13 @@ class Editor:
         self.img = color.parse(self.img,  json_methods['color'])
         self.img = size.parse(self.img,  json_methods['size'])
         self.img = compress.parse(self.img, json_methods['compress'])
-        # self.img = prikols.parse(self.img,  json_methods['prikols'])
+        self.img = prikols.parse(self.img,  json_methods['prikols'])
         return Editor.pil_to_base64(self.img, json_methods['compress'])
+
+    def get_prikol(self, method):
+        img, file = prikols.pre_parse(self.img, method)
+        img = Editor.pil_to_base64(img)
+        return img, file
 
     def get_compress(self, rate):
         img, filesize = compress.get_bytes(self.img, rate)

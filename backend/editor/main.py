@@ -38,5 +38,17 @@ def compress_size():
     return jsonify(dictToReturn)
 
 
+@app.route('/pre_prikol', methods=['POST'])
+def pre_prikol():
+    global editor
+
+    input_json = request.get_json(force=True)
+
+    img, file = editor.get_prikol(input_json['prikol'])
+
+    dictToReturn = {'image': img, 'file': file}
+    return jsonify(dictToReturn)
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=8081)

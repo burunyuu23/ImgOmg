@@ -8,7 +8,17 @@ export default defineComponent({
         ['D̸̦̘̾͊͜͝R̵̠͕͛̐͜͝A̵̡̞̟͛̕͝I̵͍͓͓͊̓͘N̵͉̙̈́̈́͊͜ S̵̡͉͔͑̈́̒T̴̻̟̙̈́͠͠Ý̸̼̼͆̀͜L̸̡͕͚͒̽͝E̴͔͕͙͐͆́',
         '𝕖𝕝𝕖𝕘𝕒𝕟𝕥',
         'sudo rm -fr /background --no-preserve-root'],
-  })
+  }),
+  computed: {
+    prikol(){
+      return this.$store.state.req.methods.prikols.prikol
+    }
+  },
+  watch: {
+    prikol(newValue) {
+      this.$store.commit('get_prikol')
+    }
+  }
 })
 </script>
 
@@ -16,18 +26,18 @@ export default defineComponent({
   <v-container class="cont">
     <div>Выберите прикол:</div>
     <v-select
-        v-model="$store.state.req.methods.prikols"
+        v-model="$store.state.req.methods.prikols.prikol"
         :items="prikols"/>
     <div
-        v-if="$store.state.req.methods.prikols !== ''">
+        v-if="$store.state.req.methods.prikols.prikol !== ''">
       <div>Выбран прикол:</div>
-      <div> {{ $store.state.req.methods.prikols }}</div>
+      <div> {{ $store.state.req.methods.prikols.prikol }}</div>
       <div
           class="grid">
       <hr class="black"/>
       <v-btn
           class="btn"
-          @click="$store.state.req.methods.prikols = ''">
+          @click="$store.state.req.methods.prikols.prikol = ''">
         Мне не нужны приколы
       </v-btn>
       <hr class="black"/>

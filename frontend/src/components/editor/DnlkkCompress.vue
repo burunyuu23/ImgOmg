@@ -1,20 +1,46 @@
 <script>
 import {defineComponent} from 'vue'
+import {imageMixin} from "../../mixins/imageMixin.js";
 
 export default defineComponent({
   name: "DnlkkCompress",
+  mixins: [imageMixin],
   data: () => ({
     compress: false,
   }),
+  computed: {
+    image() {
+      return this.$store.getters.getReqImage
+    },
+    cSize() {
+      return this.getFileSizeFromBase64(this.$store.getters.getImage.src)
+    },
+    compress_rate() {
+      return this.$store.state.req.methods.compress
+    }
+  },
   mounted() {
     this.compress = this.compress ||
-        this.$store.state.req.methods.compress < 100
+        this.$store.state.req.methods.compress < 101
+  },
+  watch: {
+    compress_rate(newValue) {
+      this.$store.commit('get_compress')
+    },
+    compress(newValue) {
+      if (newValue === false) {
+        this.$store.state.req.methods.compress = 101
+      }
+      else {
+        this.$store.state.req.methods.compress = 100
+      }
+    }
   }
 })
 </script>
 
 <template>
-  <v-container class="cont">
+  <v-container>
     <div class=" text-capitalize">Применить сжатие</div>
     <v-checkbox v-model="compress"/>
     <v-slider
@@ -23,6 +49,16 @@ export default defineComponent({
         :step="1"
         thumb-label="always"/>
   </v-container>
+  <div
+      class="cont">
+    Размер текущего файла:
+    {{getFileSizeFromBase64(image)}}
+  </div>
+  <div
+      class="cont">
+    Размер сжатого файла:
+    ~{{cSize}}
+  </div>
 </template>
 
 
@@ -33,5 +69,7 @@ export default defineComponent({
   font-size: 30px;
 }
 .cont {
+  display: flex;
+  justify-content: center;
 }
 </style>
