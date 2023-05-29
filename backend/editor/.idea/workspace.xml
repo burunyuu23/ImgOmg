@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b2210e0-ec44-43c5-ad3b-d365489afa01" name="Changes" comment="backend: requirements.txt + some pics are deleted">
-      <change beforePath="$PROJECT_DIR$/../auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/store/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="5b2210e0-ec44-43c5-ad3b-d365489afa01" name="Changes" comment="backend: requirements.txt + some pics are deleted" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +122,7 @@
       <workItem from="1685008911339" duration="915000" />
       <workItem from="1685023029718" duration="4132000" />
       <workItem from="1685036606916" duration="6888000" />
-      <workItem from="1685270167067" duration="26968000" />
+      <workItem from="1685270167067" duration="27559000" />
     </task>
     <task id="LOCAL-00001" summary="backend: color is done! + custom sepia mode, lol">
       <created>1685292502246</created>

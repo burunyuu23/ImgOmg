@@ -157,6 +157,16 @@ export default defineComponent({
               width: ${width_r}px;
               height: ${height_b}px;`"
           />
+          <div v-if="w2 !== 0" class="red-square blured"
+               :style="
+                (this.refresh ?
+               `transition: margin 0.5s ease,
+               width 0.5s ease, height 0.5s ease;`
+               : '') +`margin-top: ${height_t}px;
+              margin-left: ${width_l}px;
+              width: ${width_r}px;
+              height: ${height_b}px;`"
+          />
           <div class="non-blend-square"
                :style="
               (this.refresh ?
@@ -429,5 +439,9 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 50px;
+}
+
+.blured {
+  filter: blur(5px);
 }
 </style>
