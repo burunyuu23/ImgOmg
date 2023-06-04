@@ -40,6 +40,7 @@ export default defineComponent({
 </script>
 
 <template>
+  <div>
   <v-container>
     <div class=" text-capitalize">Применить сжатие</div>
     <v-checkbox v-model="compress"/>
@@ -58,6 +59,7 @@ export default defineComponent({
       class="cont">
     Размер сжатого файла:
     ~{{cSize}}
+  </div>
   </div>
 </template>
 

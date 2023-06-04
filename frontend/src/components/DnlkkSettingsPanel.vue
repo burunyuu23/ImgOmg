@@ -20,7 +20,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <v-container>
+  <v-container style="display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 0 10px 0;">
     <dnlkk-color v-if="method === 'Цвет'"/>
     <dnlkk-size
         @size="size"

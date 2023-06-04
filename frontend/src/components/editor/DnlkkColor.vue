@@ -4,12 +4,15 @@ import {mapGetters} from "vuex";
 
 export default defineComponent({
   name: "DnlkkColor",
+  data: (() => ({
+    page: 1
+}))
 })
 </script>
 
 <template>
-  <v-row>
-    <v-col cols="6">
+  <div style="justify-content: center">
+    <div v-if="page === 1">
       <v-container class="cont">
         <div class=" text-capitalize">Яркость</div>
         <v-slider
@@ -19,8 +22,6 @@ export default defineComponent({
             v-model="$store.state.req.methods.color.brightness"
             thumb-label="always"/>
       </v-container>
-    </v-col>
-    <v-col cols="6">
       <v-container class="cont">
         <div class=" text-capitalize">Насыщенность</div>
         <v-slider
@@ -31,11 +32,6 @@ export default defineComponent({
             v-model="$store.state.req.methods.color.saturation"
             thumb-label="always"/>
       </v-container>
-    </v-col>
-  </v-row>
-
-  <v-row>
-    <v-col cols="6">
       <v-container class="cont">
         <div class=" text-capitalize">Контрастность</div>
         <v-slider
@@ -47,8 +43,6 @@ export default defineComponent({
             thumb-label="always"
             aria-label="down"/>
       </v-container>
-    </v-col>
-    <v-col cols="6">
       <v-container class="cont">
         <div class=" text-capitalize">Сепия</div>
         <v-slider
@@ -60,11 +54,9 @@ export default defineComponent({
             thumb-label="always"
             aria-label="down"/>
       </v-container>
-    </v-col>
-  </v-row>
 
-  <v-row>
-    <v-col cols="6">
+    </div>
+    <div v-if="page === 2">
       <v-container class="cont">
         <div class=" text-capitalize">Серость...</div>
         <v-slider
@@ -76,8 +68,6 @@ export default defineComponent({
             thumb-label="always"
             aria-label="down"/>
       </v-container>
-    </v-col>
-    <v-col cols="6">
       <v-container class="cont">
         <div class=" text-capitalize">Инверсия</div>
         <v-slider
@@ -89,19 +79,16 @@ export default defineComponent({
             thumb-label="always"
             aria-label="down"/>
       </v-container>
-    </v-col>
-  </v-row>
+    </div>
 
-  <v-row>
-    <v-col cols="6">
+  </div>
 
-    </v-col>
-    <v-col cols="6">
-
-    </v-col>
-  </v-row>
-
-
+  <v-pagination
+      class="spacer"
+      v-model="page"
+      :length="2"
+      rounded="circle"
+  ></v-pagination>
 </template>
 
 
@@ -110,8 +97,6 @@ export default defineComponent({
 * {
   text-align: left;
   font-size: 30px;
-}
-.cont {
 }
 </style>
 

@@ -22,13 +22,16 @@ export default defineComponent({
     startW: 0,
     startH: 0,
     main_height: 0,
-    id: 0
+    id: 0,
+    window_width: 1920,
   }),
   methods: {
     setMethod(data) {
       this.method = data;
     },
     myEventHandler(e) {
+      this.window_width =
+          document.body.getBoundingClientRect().width;
       this.startH =
           document.getElementsByClassName("image")[0].getBoundingClientRect().height;
       this.startY =
@@ -152,7 +155,9 @@ export default defineComponent({
     <div class="main main_height">
       <div class="photo-panel">
       <div class="photo"
-           :style="`height: ${0.85*main_height}px`">
+           :style="window_width >
+           945 ? `height: ${0.85*main_height}px` :
+           `height: auto;`">
         <div class="square">
           <div v-if="w2 !== 0" class="red-square"
                :style="
@@ -508,6 +513,15 @@ a {
 
 .blured {
   filter: blur(5px);
+}
+
+@media (max-width:1000px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 10px;
+    grid-row-gap: 20px;
+  }
 }
 
 </style>
