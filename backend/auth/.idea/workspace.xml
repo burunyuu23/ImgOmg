@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT" />
+    <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../editor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../editor/compressed_image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/compressed_image.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../editor/cur.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/cur.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../editor/cur_prikols.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/cur_prikols.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../editor/cur_size.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/cur_size.jpg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -222,7 +229,9 @@
       <workItem from="1685008481124" duration="1341000" />
       <workItem from="1685023039944" duration="1260000" />
       <workItem from="1685036610395" duration="1892000" />
-      <workItem from="1685270171148" duration="4459000" />
+      <workItem from="1685270171148" duration="6704000" />
+      <workItem from="1685530239460" duration="514000" />
+      <workItem from="1685879694995" duration="609000" />
     </task>
     <task id="LOCAL-00001" summary="`Hi there!`'s commit">
       <created>1683224067825</created>
@@ -370,7 +379,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/auth$main.coverage" NAME="main Coverage Results" MODIFIED="1685273396370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/auth$main.coverage" NAME="main Coverage Results" MODIFIED="1685879695725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/task6_v2$PostgresConnection.coverage" NAME="PostgresConnection Coverage Results" MODIFIED="1684002454181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/task6_v2$jwt_bearer.coverage" NAME="jwt_bearer Coverage Results" MODIFIED="1684063069932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/auth" />
     <SUITE FILE_PATH="coverage/auth$app.coverage" NAME="app Coverage Results" MODIFIED="1684599505521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

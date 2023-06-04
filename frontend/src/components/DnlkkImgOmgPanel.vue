@@ -3,10 +3,11 @@ import {defineComponent} from 'vue'
 import DnlkkSettingsPanel from "./DnlkkSettingsPanel.vue";
 import {mapGetters} from "vuex";
 import { saveAs } from 'file-saver';
+import LayerPhoto from "./LayerPhoto.vue";
 
 export default defineComponent({
   name: "DnlkkImgOmgPanel",
-  components: {DnlkkSettingsPanel},
+  components: {LayerPhoto, DnlkkSettingsPanel},
   data: () => ({
     shouldRender: false,
     refresh: false,
@@ -95,6 +96,11 @@ export default defineComponent({
       const byteArray = new Uint8Array(byteNumbers);
       const blob = new Blob([byteArray], { type: 'image/jpeg' });
       saveAs(blob, 'ImageOMG.jpg');
+    },
+    chooseLayer(layer_num){
+      this.shouldRender = true;
+      this.$store.commit('chooseLayer', layer_num);
+      this.rerender();
     }
   },
   computed: {
@@ -144,8 +150,9 @@ export default defineComponent({
       class="cont"
       v-if="!shouldRender">
     <div class="main main_height">
+      <div class="photo-panel">
       <div class="photo"
-           :style="`height: ${main_height}px`">
+           :style="`height: ${0.85*main_height}px`">
         <div class="square">
           <div v-if="w2 !== 0" class="red-square"
                :style="
@@ -199,6 +206,28 @@ export default defineComponent({
         width: ${this.startW+20}px;
         height: ${this.startH+20}px;`">
         </div>
+      </div>
+        <div class="layers_panel"
+             :style="`height: ${0.15*main_height}px`">
+      <div class="layers">
+        <div v-if="$store.state.layers.length === 0">
+          Пока что слоёв нет
+          .
+        </div>
+        <div
+            class="layer-photo"
+            v-else>
+          <layer-photo v-for="(layer, index) in
+          $store.state.layers"
+              @chooseLayer="chooseLayer"
+              class="image layer-image"
+              :style="`width: ${0.12*main_height}px;
+              height: ${0.12*main_height}px;`"
+              :photo_src="layer"
+          :layer_num="index"/>
+        </div>
+      </div>
+          </div>
       </div>
       <div class="settings">
         <div class="settings-choose">
@@ -272,6 +301,10 @@ a {
   flex-grow: 0;
 }
 
+.photo-panel {
+  grid-template-rows: 1fr 1fr;
+}
+
 .photo {
   background: black;
   box-shadow: 0 0 20px black;
@@ -318,6 +351,38 @@ a {
 .panel {
   height: 95%;
   background: var(--main-bgc);
+}
+
+.layers_panel {
+  display: flex;
+  text-align: center;
+  align-content: center;
+  justify-content: left;
+  padding: 20px;
+
+  background: linear-gradient(black,
+  var(--header-bgc));
+
+  box-shadow: 0 0 20px black;
+}
+
+.layer-photo {
+  display: flex;
+}
+.layer-image {
+  margin: 20px;
+  border: 5px solid black;
+  border-radius: 10%;
+  cursor: pointer;
+}
+.layers {
+  display: flex;
+  align-items: center;
+
+  color: white;
+  text-shadow: 0 0 5px white;
+
+  height: 100%;
 }
 
 .chosen {
@@ -444,4 +509,5 @@ a {
 .blured {
   filter: blur(5px);
 }
+
 </style>
