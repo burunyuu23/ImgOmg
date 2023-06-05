@@ -9,7 +9,7 @@ class PostgreConn:
 
     def add(self, SQL: str):
         conn = psycopg2.connect(
-            host='127.0.0.1',
+            host='database',
             port=5432,
             user=self.settings[0],
             password=self.settings[1],

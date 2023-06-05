@@ -21,7 +21,6 @@
     "mkcert": "^1.5.1",
     "roboto-fontface": "*",
     "vue": "^3.2.47",
-    "vue-resize": "^1.0.1",
     "vue-router": "^4.0.13",
     "vuetify": "^3.0.0-beta.0",
     "vuex": "^4.1.0",

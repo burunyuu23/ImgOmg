@@ -5,17 +5,19 @@ import uvicorn
 import PostgresConnection
 import jwt_utils.pass_hash as ph
 
-from fastapi import FastAPI, Body, Depends, HTTPException
+from fastapi import FastAPI, Body, Depends, HTTPException, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 
 from jwt_utils.jwt_handler import signJWT, decodeJWT
-from data_request_model import Category, UserLogin, User
+from data_request_model import UserLogin, User
 from jwt_utils.jwt_bearer import jwtBearer
 
 app = FastAPI()
+router = APIRouter(prefix="/api/auth")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://localhost:5173"],
+    allow_origins=["https://localhost/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -24,7 +26,7 @@ app.add_middleware(
 PC = PostgresConnection.PostgreConn(sys.argv[1:])
 
 
-@app.get("/", dependencies=[Depends(jwtBearer())])
+@router.get("/", dependencies=[Depends(jwtBearer())])
 async def pong():
     return {
         'id': 0,
@@ -33,7 +35,7 @@ async def pong():
     }
 
 
-@app.post('/user/signup', tags=["user"])
+@router.post('/user/signup', tags=["user"])
 def user_signup(user: User = Body(default=None)):
     user.password = ph.hash(user.password)
     response = PC.insert_user(user)
@@ -42,14 +44,14 @@ def user_signup(user: User = Body(default=None)):
     return signJWT(user.email)
 
 
-@app.post('/user/check', tags=["user"])
+@router.post('/user/check', tags=["user"])
 def check_user(data: UserLogin):
     pdata = PC.check(data)
     if len(pdata) > 0:
         return ph.verify(data.password, pdata[0][2])
 
 
-@app.post('/user/login', tags=["user"])
+@router.post('/user/login', tags=["user"])
 def user_login(user: UserLogin = Body(default=None)):
     if check_user(user):
         return signJWT(user.login + "/" + user.email)
@@ -57,14 +59,14 @@ def user_login(user: UserLogin = Body(default=None)):
         raise HTTPException(status_code=403, detail='Invalid login data!')
 
 
-@app.get('/user/profile', dependencies=[Depends(jwtBearer())], tags=["user"])
+@router.get('/user/profile', dependencies=[Depends(jwtBearer())], tags=["user"])
 def user_profile(token=Depends(jwtBearer())):
     decode_data = decodeJWT(token)
     pdata = PC.select_user(decode_data['userID'])
     return pdata
 
 
-@app.get('/user/logout', tags=["user"])
+@router.get('/user/logout', tags=["user"])
 def user_profile():
     data = {
         'login': '',
@@ -76,5 +78,7 @@ def user_profile():
     return data
 
 
+app.include_router(router)
+
 if __name__ == '__main__':
-    uvicorn.run('main:app', host="127.0.0.1", port=8080)
+    uvicorn.run('main:app', host="0.0.0.0", port=int(sys.argv[4]))

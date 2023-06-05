@@ -1,4 +1,6 @@
-from flask import Flask, request, jsonify
+import sys
+
+from flask import Flask, request, jsonify, Blueprint
 from flask_cors import CORS, cross_origin
 
 from editor_module import Editor
@@ -6,11 +8,12 @@ from editor_module import Editor
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+auth_bp = Blueprint('auth', __name__, url_prefix='/api/editor')
 
 editor = ''
 
 
-@app.route('/upload', methods=['POST'])
+@auth_bp.route('/upload', methods=['POST'])
 def upload():
     global editor
 
@@ -23,7 +26,7 @@ def upload():
     return jsonify(dictToReturn)
 
 
-@app.route('/compress_size', methods=['POST'])
+@auth_bp.route('/compress_size', methods=['POST'])
 def compress_size():
     global editor
 
@@ -35,7 +38,7 @@ def compress_size():
     return jsonify(dictToReturn)
 
 
-@app.route('/pre_prikol', methods=['POST'])
+@auth_bp.route('/pre_prikol', methods=['POST'])
 def pre_prikol():
     global editor
 
@@ -47,5 +50,7 @@ def pre_prikol():
     return jsonify(dictToReturn)
 
 
+app.register_blueprint(auth_bp)
+
 if __name__ == '__main__':
-    app.run(debug=True, port=8081)
+    app.run(debug=True, port=int(sys.argv[1]), host='0.0.0.0')

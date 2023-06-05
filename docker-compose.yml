@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    networks:
+      - frontend_nw
+
+  auth:
+    build: ./backend/auth
+    container_name: auth
+    networks:
+      - auth_nw
+
+  editor:
+    build: ./backend/editor
+    container_name: editor
+    networks:
+      - editor_nw
+
+  database:
+    image: "postgres:10.0"
+    env_file: 
+      - ./db/database.env
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d
+    networks:
+      - auth_nw
+      - editor_nw
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - frontend
+      - auth
+      - editor
+    networks:
+      - frontend_nw
+      - auth_nw
+      - editor_nw
+
+networks:
+  frontend_nw:
+  auth_nw:
+  editor_nw:
