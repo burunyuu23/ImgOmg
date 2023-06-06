@@ -19,7 +19,19 @@ mixins.forEach(mixin => {
     app.mixin(mixin)
 })
 
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+import { faSquareCaretLeft } from '@fortawesome/free-solid-svg-icons'
+import { faSquareCaretRight } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faSquareCaretLeft)
+library.add(faSquareCaretRight)
+
+
 app
+    .component('font-awesome-icon', FontAwesomeIcon)
     .component('VueDatePicker', VueDatePicker)
     .use(store)
     .use(vuetify)

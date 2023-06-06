@@ -4,10 +4,15 @@ import DnlkkSettingsPanel from "./DnlkkSettingsPanel.vue";
 import {mapGetters} from "vuex";
 import { saveAs } from 'file-saver';
 import LayerPhoto from "./LayerPhoto.vue";
+import {
+  FontAwesomeIcon
+} from "@fortawesome/vue-fontawesome";
 
 export default defineComponent({
   name: "DnlkkImgOmgPanel",
-  components: {LayerPhoto, DnlkkSettingsPanel},
+  components: {
+    FontAwesomeIcon,
+    LayerPhoto, DnlkkSettingsPanel},
   data: () => ({
     shouldRender: false,
     refresh: false,
@@ -24,6 +29,7 @@ export default defineComponent({
     main_height: 0,
     id: 0,
     window_width: 1920,
+    current_first_layer: 0,
   }),
   methods: {
     setMethod(data) {
@@ -157,7 +163,7 @@ export default defineComponent({
       <div class="photo"
            :style="window_width >
            945 ? `height: ${0.85*main_height}px` :
-           `height: auto;`">
+           `height: auto`">
         <div class="square">
           <div v-if="w2 !== 0" class="red-square"
                :style="
@@ -222,14 +228,34 @@ export default defineComponent({
         <div
             class="layer-photo"
             v-else>
+          <div
+              style="display: grid; align-items: center;
+              justify-items: center"
+            :style="`grid-template-columns: repeat(${Math.min($store.state.layers.length + 2, 5)}, 1fr);`">
+          <font-awesome-icon
+              v-if="$store.state.layers.length > 3 &&
+                    current_first_layer > 0"
+              @click="current_first_layer--"
+              class="icon"
+              icon="square-caret-left" />
+            <div v-else/>
           <layer-photo v-for="(layer, index) in
-          $store.state.layers"
+          $store.state.layers.slice(current_first_layer,
+          current_first_layer + 3)"
               @chooseLayer="chooseLayer"
               class="image layer-image"
               :style="`width: ${0.12*main_height}px;
               height: ${0.12*main_height}px;`"
               :photo_src="layer"
-          :layer_num="index"/>
+          :layer_num="current_first_layer+index"/>
+          <font-awesome-icon
+              v-show="$store.state.layers.length > 3 &&
+                    current_first_layer <
+                    $store.state.layers.length - 3"
+              @click="current_first_layer++"
+              class="icon"
+              icon="square-caret-right" />
+          </div>
         </div>
       </div>
           </div>
@@ -362,7 +388,7 @@ a {
   display: flex;
   text-align: center;
   align-content: center;
-  justify-content: left;
+  justify-content: center;
   padding: 20px;
 
   background: linear-gradient(black,
@@ -373,6 +399,16 @@ a {
 
 .layer-photo {
   display: flex;
+  align-items: center;
+  font-weight: 900;
+  justify-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+.icon {
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
 }
 .layer-image {
   margin: 20px;
