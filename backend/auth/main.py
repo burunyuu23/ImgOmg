@@ -81,4 +81,4 @@ def user_profile():
 app.include_router(router)
 
 if __name__ == '__main__':
-    uvicorn.run('main:app', host="0.0.0.0", port=int(sys.argv[4]))
+    uvicorn.run('main:app', host="0.0.0.0", port=int(sys.argv[5]))

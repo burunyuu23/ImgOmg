@@ -21,10 +21,18 @@ services:
 
   database:
     image: "postgres:10.0"
+    ports:
+      - 5432:5432
     env_file: 
       - ./db/database.env
     volumes:
       - ./db/init:/docker-entrypoint-initdb.d
+      - ./db/data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      interval: 5s
+      retries: 5
+    restart: on-failure
     networks:
       - auth_nw
       - editor_nw
@@ -37,6 +45,7 @@ services:
       - frontend
       - auth
       - editor
+    restart: always
     networks:
       - frontend_nw
       - auth_nw

@@ -5,25 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT">
+      <change afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PostgresConnection.py" beforeDir="false" afterPath="$PROJECT_DIR$/PostgresConnection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../editor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../editor/compressed_image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/compressed_image.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../editor/cur.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/cur.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../editor/cur_prikols.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/cur_prikols.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../editor/cur_size.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/cur_size.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../editor/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../db/docker-compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../db/init_categories.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../db/init_test.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../db/init_users.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/baseUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/baseUrl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +124,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="danilkk 123 danilkk_db 5001" />
+      <option name="PARAMETERS" value="localhost danilkk 123 danilkk_db 5001" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -248,7 +236,8 @@
       <workItem from="1685901210858" duration="5467000" />
       <workItem from="1685987045101" duration="118000" />
       <workItem from="1685987469415" duration="970000" />
-      <workItem from="1685990450533" duration="3434000" />
+      <workItem from="1685990450533" duration="3510000" />
+      <workItem from="1686064232452" duration="2223000" />
     </task>
     <task id="LOCAL-00001" summary="`Hi there!`'s commit">
       <created>1683224067825</created>

@@ -9,11 +9,11 @@ class PostgreConn:
 
     def add(self, SQL: str):
         conn = psycopg2.connect(
-            host='database',
+            host=self.settings[0],
             port=5432,
-            user=self.settings[0],
-            password=self.settings[1],
-            database=self.settings[2])
+            user=self.settings[1],
+            password=self.settings[2],
+            database=self.settings[3])
         cur = conn.cursor()
         cur.execute(SQL)
 
