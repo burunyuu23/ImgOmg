@@ -244,10 +244,12 @@ export default createStore({
             }
         },
         chooseLayer(state, num){
-            state.layers = state.layers.slice(0, num + 1);
             state.image = state.layers[num];
+            state.save_image = state.layers[num];
             state.req.image = state.image.src
             this.commit('refresh');
+            this.commit('upload', state.image.src)
+            state.layers = state.layers.slice(0, num);
         }
     },
     modules: {}

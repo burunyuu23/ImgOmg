@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b2210e0-ec44-43c5-ad3b-d365489afa01" name="Changes" comment="backend: requirements.txt + some pics are deleted">
-      <change afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/PostgresConnection.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/PostgresConnection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auth/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +136,7 @@
       <workItem from="1685902327584" duration="4963000" />
       <workItem from="1685987054286" duration="994000" />
       <workItem from="1685990446413" duration="2991000" />
-      <workItem from="1686064240840" duration="1184000" />
+      <workItem from="1686064240840" duration="1778000" />
     </task>
     <task id="LOCAL-00001" summary="backend: color is done! + custom sepia mode, lol">
       <created>1685292502246</created>

@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cd2dfdc-77a9-4fb9-8ec1-b0645dcd544b" name="Changes" comment="fkcing sqlalchemy. expiry date is a 31 may AND IM TRYING TO FIGURE OUT THIS SHT">
-      <change afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostgresConnection.py" beforeDir="false" afterPath="$PROJECT_DIR$/PostgresConnection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../editor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../editor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +233,7 @@
       <workItem from="1685987045101" duration="118000" />
       <workItem from="1685987469415" duration="970000" />
       <workItem from="1685990450533" duration="3510000" />
-      <workItem from="1686064232452" duration="2223000" />
+      <workItem from="1686064232452" duration="3148000" />
     </task>
     <task id="LOCAL-00001" summary="`Hi there!`'s commit">
       <created>1683224067825</created>
