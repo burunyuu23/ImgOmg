@@ -167,7 +167,7 @@ export default createStore({
             // console.log(image)
 
             await axios.post(`${EDIT_URL}/upload`,
-                state.req)
+                {login: state.profile.login, req: state.req})
                 .then(resp => {
                     // console.log('SUCCESS!!');
                     if (state.req.methods.compress !== 102)
@@ -188,7 +188,7 @@ export default createStore({
         },
         async get_compress(state) {
             await axios.post(`${EDIT_URL}/compress_size`,
-                {image: state.req.image, rate: state.req.methods.compress})
+                {login: state.profile.login, rate: state.req.methods.compress})
                 .then(resp => {
                     // console.log('SUCCESS!!');
 
@@ -208,7 +208,7 @@ export default createStore({
         },
         async get_prikol(state) {
             await axios.post(`${EDIT_URL}/pre_prikol`,
-                {image: state.req.image, prikol: state.req.methods.prikols})
+                {login: state.profile.login, prikol: state.req.methods.prikols})
                 .then(resp => {
                     // console.log('SUCCESS!!');
 
@@ -226,7 +226,6 @@ export default createStore({
         },
         refreshing(state){
             state.image = state.save_image
-            this.commit('refresh')
         },
         refresh(state){
             state.req.methods.color = {

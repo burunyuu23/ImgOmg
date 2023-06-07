@@ -108,6 +108,7 @@ export default defineComponent({
     },
     chooseLayer(layer_num){
       this.shouldRender = true;
+      this.current_first_layer = 0;
       this.$store.commit('chooseLayer', layer_num);
       this.rerender();
     }

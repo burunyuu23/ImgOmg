@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5b2210e0-ec44-43c5-ad3b-d365489afa01" name="Changes" comment="backend: requirements.txt + some pics are deleted">
       <change beforePath="$PROJECT_DIR$/../auth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/compressed_image.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cur.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cur.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cur_prikols.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/cur_prikols.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/DnlkkImgOmgPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -58,7 +64,7 @@
       <recent name="C:\Users\user\PycharmProjects\task6_v2\backend\editor\modules" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Python tests for tests.MyTestCase.test_append">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="editor" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,35 +87,96 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="editor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.MyTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.MyTestCase.test_another" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.MyTestCase.test_another&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.MyTestCase.test_append" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.MyTestCase.test_append&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.MyTestCase.test_something" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.MyTestCase.test_something&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in tests.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.test" />
+      <item itemvalue="Python tests.Python tests for tests.MyTestCase" />
+      <item itemvalue="Python tests.Python tests for tests.MyTestCase.test_another" />
+      <item itemvalue="Python tests.Python tests for tests.MyTestCase.test_append" />
+      <item itemvalue="Python tests.Python tests for tests.MyTestCase.test_something" />
+      <item itemvalue="Python tests.Python tests in tests.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python tests.Python tests for tests.MyTestCase.test_append" />
+        <item itemvalue="Python tests.Python tests for tests.MyTestCase.test_another" />
+        <item itemvalue="Python tests.Python tests for tests.MyTestCase" />
+        <item itemvalue="Python tests.Python tests for tests.MyTestCase.test_something" />
+        <item itemvalue="Python tests.Python tests in tests.py" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +203,10 @@
       <workItem from="1685902327584" duration="4963000" />
       <workItem from="1685987054286" duration="994000" />
       <workItem from="1685990446413" duration="2991000" />
-      <workItem from="1686064240840" duration="1778000" />
+      <workItem from="1686064240840" duration="5174000" />
+      <workItem from="1686141799850" duration="352000" />
+      <workItem from="1686142728249" duration="30000" />
+      <workItem from="1686145698532" duration="5696000" />
     </task>
     <task id="LOCAL-00001" summary="backend: color is done! + custom sepia mode, lol">
       <created>1685292502246</created>
@@ -183,7 +253,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="backend: requirements.txt + some pics are deleted" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/editor$main.coverage" NAME="main Coverage Results" MODIFIED="1685982066529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/editor$main.coverage" NAME="main Coverage Results" MODIFIED="1686146962261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/editor$.coverage" NAME=" Coverage Results" MODIFIED="1686153446483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/editor$test.coverage" NAME="test Coverage Results" MODIFIED="1685301493219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

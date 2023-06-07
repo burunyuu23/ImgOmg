@@ -1,7 +1,8 @@
 import sys
+from collections import defaultdict
 
-from flask import Flask, request, jsonify, Blueprint
-from flask_cors import CORS, cross_origin
+from flask import Flask, request, jsonify, Blueprint, abort
+from flask_cors import CORS
 
 from editor_module import Editor
 
@@ -10,17 +11,21 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 auth_bp = Blueprint('auth', __name__, url_prefix='/api/editor')
 
-editor = ''
+editors = defaultdict(dict)
 
 
 @auth_bp.route('/upload', methods=['POST'])
 def upload():
-    global editor
+    global editors
 
     input_json = request.get_json(force=True)
+    req = input_json['req']
 
-    editor = Editor(input_json['image'])
-    img = editor.parse(input_json['methods'])
+    login = input_json['login']
+    editor = Editor(req['image'])
+    editors[login] = editor
+
+    img = editor.parse(req['methods'])
 
     dictToReturn = {'image': img}
     return jsonify(dictToReturn)
@@ -28,9 +33,14 @@ def upload():
 
 @auth_bp.route('/compress_size', methods=['POST'])
 def compress_size():
-    global editor
+    global editors
 
     input_json = request.get_json(force=True)
+
+    login = input_json['login']
+    if not editors[login]:
+        return abort(403)
+    editor = editors[login]
 
     img, size = editor.get_compress(input_json['rate'])
 
@@ -40,9 +50,14 @@ def compress_size():
 
 @auth_bp.route('/pre_prikol', methods=['POST'])
 def pre_prikol():
-    global editor
+    global editors
 
     input_json = request.get_json(force=True)
+
+    login = input_json['login']
+    if not editors[login]:
+        return abort(403)
+    editor = editors[login]
 
     img, file = editor.get_prikol(input_json['prikol'])
 
