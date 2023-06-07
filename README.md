@@ -31,6 +31,11 @@
 
 <hr/>
 
+# Документация ~~, но на самом деле это отчёт по практике, я подумал почему бы и нет. Не будет же она просто так валяться.~~
+[Документация](https://github.com/burunyuu23/ImgOmg/files/11682407/Documentation.pdf)
+
+<hr/>
+
 # Проект представляет из себя веб-ресурс для простейших манипуляций над изображениями.
 
 <p align="center">
@@ -136,7 +141,11 @@
 5. **Поддержка слоёв**
 
 > можно нажать на любой из слоёв и вы сбросите картинку до него
-![image](https://github.com/burunyuu23/ImgOmg/assets/34377854/e4130728-d5f7-4d8b-b5ed-b7830e993c7d)
+![image](https://github.com/burunyuu23/ImgOmg/assets/34377854/8df155f4-ec7a-43c9-bf61-b218dcfb3918)
+![image](https://github.com/burunyuu23/ImgOmg/assets/34377854/29c8e369-150a-4c4f-924c-bcc7b3902b4e)
+
+> ещё одно изображение после редактирования, но уже со всеми пруфами
+![image](https://github.com/burunyuu23/ImgOmg/assets/34377854/9febb351-3f19-42ed-852c-401c4d91de38)
 
 ---
 
@@ -168,7 +177,7 @@
 8. немного адаптивности не помешает?
 
 <a id="Адаптивность"></a>
-![image](https://github.com/burunyuu23/ImgOmg/assets/34377854/461ddb7a-60d9-4b2a-bf4b-326acafbc892)
+![image](https://github.com/burunyuu23/ImgOmg/assets/34377854/137c7e1c-56a7-465b-a0c8-5e36afba0a29)
 
 
 <a id="Backend"></a>
