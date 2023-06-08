@@ -3,7 +3,7 @@
   <div  align="center">
     <h1 font-weight="900">ImgOmg</h1>
     <h4>krutoi editor photo (по крайней мере он таким задумывался)</h4>
-</div>
+  </div>
 <hr/>
 </p>
 
@@ -32,7 +32,10 @@
 <hr/>
 
 # Документация ~~, но на самом деле это отчёт по практике, я подумал почему бы и нет. Не будет же она просто так валяться.~~
-[Документация](https://github.com/burunyuu23/ImgOmg/files/11682407/Documentation.pdf)
+
+  <div  align="center">
+    <a href="https://github.com/burunyuu23/ImgOmg/files/11682407/Documentation.pdf">Документацион</a>
+</div>
 
 <hr/>
 
