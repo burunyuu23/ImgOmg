@@ -33,9 +33,12 @@
 
 # Документация ~~, но на самом деле это отчёт по практике, я подумал почему бы и нет. Не будет же она просто так валяться.~~
 
-  <div  align="center">
-    <a href="https://github.com/burunyuu23/ImgOmg/files/11687027/Documentation.pdf">Документацион</a>
+  <div  align="center" style="color: red;">
+    <kbd style="background-color: #00ff00; padding: 5px 10px; border: 1px solid #fff; border-radius: 50%; font-size: 20px; font-weight: 900; color: green;">
+      <a href="https://github.com/burunyuu23/ImgOmg/files/11687091/Documentation.pdf">Документацион</a>
+    </kbd>
 </div>
+
 
 <hr/>
 
