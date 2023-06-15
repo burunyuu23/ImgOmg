@@ -36,4 +36,4 @@ export const imageMixin = {
             return `${this.getBase64FileSize(base64String)} ${this.names[this.names_index]}`
         }
     }
-}
+};

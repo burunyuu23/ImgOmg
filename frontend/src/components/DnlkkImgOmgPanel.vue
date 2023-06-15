@@ -7,10 +7,12 @@ import LayerPhoto from "./LayerPhoto.vue";
 import {
   FontAwesomeIcon
 } from "@fortawesome/vue-fontawesome";
+import DnlkkRect from "./DnlkkRect.vue";
 
 export default defineComponent({
   name: "DnlkkImgOmgPanel",
   components: {
+    DnlkkRect,
     FontAwesomeIcon,
     LayerPhoto, DnlkkSettingsPanel},
   data: () => ({
@@ -18,14 +20,18 @@ export default defineComponent({
     refresh: false,
     method: 'Цвет',
     methods: ['Цвет', 'Размер', 'Сжатие', 'Приколы'],
-    width_l: 0,
-    width_r: 1,
-    height_t: 0,
-    height_b: 1,
-    startX: 0,
-    startY: 0,
-    startW: 0,
-    startH: 0,
+    baseRect: {
+      width_l: 0,
+      width_r: 1,
+      height_t: 0,
+      height_b: 1,
+    },
+    startRect: {
+      startX: 0,
+      startY: 0,
+      startW: 0,
+      startH: 0,
+    },
     main_height: 0,
     id: 0,
     window_width: 1920,
@@ -38,22 +44,22 @@ export default defineComponent({
     myEventHandler(e) {
       this.window_width =
           document.body.getBoundingClientRect().width;
-      this.startH =
+      this.startRect.startH =
           document.getElementsByClassName("image")[0].getBoundingClientRect().height;
-      this.startY =
+      this.startRect.startY =
           document.getElementsByClassName("image")[0].getBoundingClientRect().y -
           document.getElementsByClassName("photo")[0].getBoundingClientRect().y - 20;
 
-      this.startX =
+      this.startRect.startX =
           this.isWide ?
               0 :
               (document.getElementsByClassName("image")[0].getBoundingClientRect().width
-                  - this.startH / this.getImage.height *
+                  - this.startRect.startH / this.getImage.height *
                   this.getImage.width) / 2;
-      this.startW =
+      this.startRect.startW =
           this.isWide ?
               document.getElementsByClassName("image")[0].getBoundingClientRect().width :
-              this.startH / this.getImage.height *
+              this.startRect.startH / this.getImage.height *
               this.getImage.width;
 
 
@@ -63,19 +69,21 @@ export default defineComponent({
       this.resize();
     },
     size(w, w2, h, h2) {
-      this.width_l = this.startX +
-          w / this.getImage.width * this.startW
+      this.baseRect.width_l = this.startRect.startX +
+          w / this.getImage.width * this.startRect.startW
 
-      this.width_r = this.startW - this.width_l +
-          this.startX -
-          (this.getImage.width - w2) / this.getImage.width * this.startW
+      this.baseRect.width_r = this.startRect.startW -
+          this.baseRect.width_l +
+          this.startRect.startX -
+          (this.getImage.width - w2) /
+          this.getImage.width * this.startRect.startW
 
-      this.height_t = this.startY +
-          h / this.getImage.height * this.startH
+      this.baseRect.height_t = this.startRect.startY +
+          h / this.getImage.height * this.startRect.startH
 
-      this.height_b = this.startH - this.height_t +
-          this.startY -
-          (this.getImage.height - h2) / this.getImage.height * this.startH
+      this.baseRect.height_b = this.startRect.startH - this.baseRect.height_t +
+          this.startRect.startY -
+          (this.getImage.height - h2) / this.getImage.height * this.startRect.startH
 
       this.$store.commit('setSize', [w, w2, h, h2]);
     },
@@ -97,7 +105,7 @@ export default defineComponent({
     },
     save() {
       const byteCharacters =
-          atob(this.$store.getters.getImage.src.split(',')[1]);
+          atob(this.$store.getters.getReqImage.split(',')[1]);
       const byteNumbers = new Array(byteCharacters.length);
       for (let i = 0; i < byteCharacters.length; i++) {
         byteNumbers[i] = byteCharacters.charCodeAt(i);
@@ -120,9 +128,7 @@ export default defineComponent({
       let photo_aspect =
           document.getElementsByClassName("main_height")[0].getBoundingClientRect().width /
           document.getElementsByClassName("main_height")[0].getBoundingClientRect().height
-      // console.log(image_aspect)
-      // console.log(document.getElementsByClassName("main_height")[0].getBoundingClientRect())
-      // console.log(photo_aspect)
+
       return image_aspect >= photo_aspect
     },
     w() {
@@ -166,35 +172,14 @@ export default defineComponent({
            945 ? `height: ${0.85*main_height}px` :
            `height: auto`">
         <div class="square">
-          <div v-if="w2 !== 0" class="red-square"
-               :style="
-                (this.refresh ?
-               `transition: margin 0.5s ease,
-               width 0.5s ease, height 0.5s ease;`
-               : '') +`margin-top: ${height_t}px;
-              margin-left: ${width_l}px;
-              width: ${width_r}px;
-              height: ${height_b}px;`"
+          <dnlkk-rect v-if="w2 !== 0" class="red-square"
+                      :refresh="refresh" :base-rect="baseRect"
+                      />
+          <dnlkk-rect v-if="w2 !== 0" class="red-square blurred"
+                      :refresh="refresh" :base-rect="baseRect"
           />
-          <div v-if="w2 !== 0" class="red-square blured"
-               :style="
-                (this.refresh ?
-               `transition: margin 0.5s ease,
-               width 0.5s ease, height 0.5s ease;`
-               : '') +`margin-top: ${height_t}px;
-              margin-left: ${width_l}px;
-              width: ${width_r}px;
-              height: ${height_b}px;`"
-          />
-          <div class="non-blend-square"
-               :style="
-              (this.refresh ?
-               `transition: margin 0.5s ease,
-               width 0.5s ease, height 0.5s ease;`
-               : '') + `margin-top: ${height_t}px;
-              margin-left: ${width_l}px;
-              width: ${width_r}px;
-              height: ${height_b}px;`"
+          <dnlkk-rect class="non-blend-square"
+                      :refresh="refresh" :base-rect="baseRect"
           />
           <div v-if="w2 !== 0"
                class="another-square"/>
@@ -203,20 +188,20 @@ export default defineComponent({
                :style="
                (this.refresh ?
                `transition: filter 1s linear;`
-               : '') +
-               `filter: brightness(${this.getColor.brightness}%)
-               saturate(${this.getColor.saturation}%)
-               contrast(${this.getColor.contrast}%)
-               grayscale(${this.getColor.grayscale}%)
-                sepia(${this.getColor.sepia}%)
-                invert(${this.getColor.invert}%);`"
+               : 'transition: filter 0.1s linear;') +
+               `filter: brightness(${getColor.brightness}%)
+               saturate(${getColor.saturation}%)
+               contrast(${getColor.contrast}%)
+               grayscale(${getColor.grayscale}%)
+                sepia(${getColor.sepia}%)
+                invert(${getColor.invert}%);`"
                class="image"/>
         <div class="image image_gradient"
              :style="`
-        margin-left: ${this.startX-10}px;
-        margin-right: ${this.startY-10}px;
-        width: ${this.startW+20}px;
-        height: ${this.startH+20}px;`">
+        margin-left: ${startRect.startX - 10}px;
+        margin-right: ${startRect.startY - 10}px;
+        width: ${startRect.startW + 20}px;
+        height: ${startRect.startH + 20}px;`">
         </div>
       </div>
         <div class="layers_panel"
@@ -548,7 +533,7 @@ a {
   font-size: 50px;
 }
 
-.blured {
+.blurred {
   filter: blur(5px);
 }
 

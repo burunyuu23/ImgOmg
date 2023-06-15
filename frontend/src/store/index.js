@@ -39,7 +39,6 @@ export default createStore({
             }
         },
         layers: [],
-        compress_size: 0
     },
     getters: {
         getImage(state){
@@ -178,7 +177,6 @@ export default createStore({
                     state.image.src = resp.data.image
                     state.layers.push(state.image)
                     state.req.methods.size = [0, state.image.naturalWidth, 0, state.image.naturalHeight]
-                    console.log(state.req.methods.size);
                 })
                 .catch(err => {
                     // console.log('FAILURE!!');
@@ -195,7 +193,6 @@ export default createStore({
                     state.save_image = state.image
                     state.image = new Image()
                     state.image.src = resp.data.image
-                    state.compress_size = resp.data.size
                 })
                 .catch(err => {
                     // console.log('FAILURE!!');

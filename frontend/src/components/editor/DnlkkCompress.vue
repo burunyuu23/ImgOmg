@@ -12,8 +12,8 @@ export default defineComponent({
     image() {
       return this.$store.getters.getReqImage
     },
-    cSize() {
-      return this.getFileSizeFromBase64(this.$store.getters.getImage.src)
+    src_image() {
+      return this.$store.getters.getImage.src
     },
     compress_rate() {
       return this.$store.state.req.methods.compress
@@ -58,7 +58,7 @@ export default defineComponent({
   <div
       class="cont">
     Размер сжатого файла:
-    ~{{cSize}}
+    ~{{getFileSizeFromBase64(src_image)}}
   </div>
   </div>
 </template>

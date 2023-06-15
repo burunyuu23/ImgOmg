@@ -42,9 +42,9 @@ def compress_size():
         return abort(403)
     editor = editors[login]
 
-    img, size = editor.get_compress(input_json['rate'])
+    img = editor.get_compress(input_json['rate'])
 
-    dictToReturn = {'image': img, 'size': size}
+    dictToReturn = {'image': img}
     return jsonify(dictToReturn)
 
 
